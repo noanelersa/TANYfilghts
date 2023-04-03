@@ -44,7 +44,7 @@ const updateArticle = async (req, res) => {
   };
 */
   const getHomePage = async (req,res) => {
-    res.render("TANYflights.ejs");
+    res.render("homeScreen.ejs");
   }
 
   module.exports = {

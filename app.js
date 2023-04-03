@@ -16,6 +16,8 @@ app.use(bodyParser.urlencoded({extended : true}));
 app.use(express.json());
 app.set("view engine", "ejs");
 app.use('/', homePage);
+app.use(express.static("public"));
+app.use(express.static("img"));
 
 
 app.listen(process.env.PORT); 
