@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const articles = require('./routes/article');
+const homePage = require('./routes/homePage');
 const newLocal = require('custom-env');
 newLocal.env(process.env.NODE_ENV, './config');
 
@@ -14,8 +14,8 @@ var app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(express.json());
-
-app.use('/articles', articles);
+app.set("view engine", "ejs");
+app.use('/', homePage);
 
 
 app.listen(process.env.PORT); 

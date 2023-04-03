@@ -1,4 +1,4 @@
-const articleService = require('../services/article');
+/*const articleService = require('../services/article');
 
 const createArticle = async (req, res) => {
     const newArticle = await articleService.createArticle(req.body.title);
@@ -42,11 +42,11 @@ const updateArticle = async (req, res) => {
   
     res.send();
   };
+*/
+  const getHomePage = async (req,res) => {
+    res.render("TANYflights.ejs");
+  }
 
   module.exports = {
-    createArticle,
-    getArticles,
-    getArticle,
-    updateArticle,
-    deleteArticle
+    getHomePage
   };
