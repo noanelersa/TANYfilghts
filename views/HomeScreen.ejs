@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="homeScreenStyle.css">
+  </head>
+
+
+  <body>
+    <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid toolbar ">
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarNav " >
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 " style="margin-top: -19px;">
+                <a class="navbar-brand test nav-item header_feature h1" href="#" style="height: 50px;"><h1>TANY FLIGHTS</h1></a>
+            </ul>
+            <span class="d-flex">
+                <span class="nav-item rand">
+                  <a class="nav-link header_feature big" href="#"><i class="bi bi-person-circle"></i></a>
+                </span>
+                <a>
+                  <img class="img" src="Tanylogo (1).png">
+                </a>
+              </span>   
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="center center_page">
+        <div id="rectangle">
+          <div class="container text-center" style="margin-top: 40px">
+            <div class="row space_row">
+              <div class="col">
+                <div style = " left:350px; top:350px;color:white">
+                  <label for="from">From:</label> 
+                  <input type="text" id="from" name="from" placeholder="Enter City or Airport" required>
+                </div>
+              </div>
+              <div class="col">
+                <div style = " left:750px; top:350px;color:white">
+                  <label for="to">To:</label>
+                  <input type="text" id="to" name="to" placeholder="Enter City or Airport" required>
+                </div>
+              </div>
+            </div>
+            <div class="row space_row">
+              <div class="col">
+                <div style = " left:350px; top:450px;color:white">
+                  <label for="departure">Departure:</label>
+                  <input type="date" id="departure" name="departure" required>
+                </div>
+              </div>
+              <div class="col">
+                <div style = " left:750px; top:450px;color:white">
+                  <label for="return">Return:</label>
+                  <input type="date" id="return" name="return" required>
+                </div>
+              </div>
+            </div>
+            <div class="row space_row">
+              <div class="col">
+                <div style = " left:1110px; top:530px;color:white">
+                  <button type="submit">Search Flights</button>
+              </div>
+              </div>
+              <div class="col">
+                <div style = " left:350px; top:520px;color:white">
+                  <label for="passengers">Passengers:</label>
+                  <input type="number" id="passengers" name="passengers" min="1" max="10" required>
+              </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div>
+    <div class="container text-center">
+        <h1 style="text-align: left;">CHEAPEST FLIGHTS</h1>
+        <div class="row">
+          <div class="col">
+            <div class="card1" style="width: 18rem;">
+                <input type="image" src="https://i.pinimg.com/564x/29/f9/82/29f982016969783338b0839d9a54647b.jpg"  class="card1img" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title tlt1">NEW YORK</h5>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Romania → New York</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Take the deal</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card1" style="width: 18rem;">
+                <input type="image" src="https://i.pinimg.com/564x/85/db/36/85db36405ff2a7a575e88e359aaec674.jpg"  class="card1img" data-bs-toggle="modal" data-bs-target="#staticBackdrop1" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title  tlt2">PARIS</h5>
+
+                     <!-- Modal -->
+                     <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Israel → Paris</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            ...
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Take the deal</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card1" style="width: 18rem;">
+                <input type="image" src="https://i.pinimg.com/564x/4c/5d/36/4c5d363d3be216141df83b36fea6a3a1.jpg"  class="card1img" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title  tlt3">LONDON</h5>
+
+                     <!-- Modal -->
+                     <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Itay → London</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            ...
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Take the deal</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+        
+          </div>
+        </div>
+      </div>
+  </div>
+    <footer class="footer">
+        <div class="container text-center">
+            <div class="row align-items-start">
+              <div class="col footer_left">
+                <h3>
+                    Do You Want To Hear More?
+                </h3>
+                <form>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <button class="buttonCancelFlight" type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+              </div>
+              <div class="col">
+                <br>
+                <br>
+                <h5>
+                    <b>Cancelling a transaction</b>
+                </h5>
+                <div><button  class="buttonCancelFlight"type="submit" class="btn btn-primary">click to cancel your flight</button></div>
+              </div>
+              <div class="col">
+                <br>
+                <!-- Button trigger modal -->
+                <button type="button" class="buttonCancelFlight" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                  About Us
+                </button><br>
+                
+               
+                <!-- Button trigger modal -->
+                <button type="button" class="buttonCancelFlight" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                    Cookies
+                  </button><br>
+                  
+
+                <!-- Button trigger modal -->
+                <button type="button" class="buttonCancelFlight" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                    Privacy
+                  </button><br>
+                  
+
+                <!-- Button trigger modal -->
+                <button type="button" class="buttonCancelFlight" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                    Contact Us
+                  </button><br>
+
+                </div>
+            </div>
+          </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">About Us</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              בלה בלה בלה בלה
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Cookies</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <b><h4>www. TANYflights.com - cookies policy</h4></b>
+                <br>
+                TANYflights through our websites (please click here for a full list of TANYflights websites) and our third-party providers set and use cookies to store and manage user preferences, deliver targeted advertising, enable content, gather analytic and usage data, and generally improve your user experience. This policy sets out what type of cookies we use, how we use them, and how you can control and manage them.
+                <br>
+                <br>
+                <b><h5>Strictly Necessary Cookies</h5></b>
+                These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. You can set your browser to block or alert you about these cookies, but some parts of the site will not then work. These cookies do not store any personally identifiable information.
+                <br>
+                <b>Cookies used</b>
+                <br>
+                <br>
+                <b><h5>Performance Cookies</h5></b>
+                These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us to know which pages are the most and least popular and see how visitors move around the site. All information these cookies collect is aggregated and therefore anonymous. If you do not allow these cookies we will not know when you have visited our site, and will not be able to monitor its performance.
+                <br>
+                <b>Cookies used</b>
+                <br>
+                <br>
+                <b><h5>Functional cookies</h5></b>
+                These cookies enable the website to provide enhanced functionality and personalisation. They may be set by us or by third party providers, whose services we have added to our pages. If you do not allow these cookies, then some or all of these services may not function properly.
+                <br>
+                <b>Cookies used</b>
+                <br>
+                <br>
+                <b><h5>Pixel Tracking Cookies</h5></b>
+                These cookies are added to the site to allow a website to analyse your activity on the website through "Events" - when a user visits the website and takes an action (e.g. making a purchase), the page pixel is triggered and reports this action as an "Event". Any action like this can be used to optimise page advertisements and build audiences for future campaigns. This is called conversion optimisation.
+                <br>
+                <b>Cookies used</b>
+                <br>
+                <br>
+                <b><h5>Targeting Cookies</h5></b>
+                These cookies may be set through our site by our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant adverts on other sites. They do not store directly personal information, but are based on uniquely identifying your browser and internet device. If you do not allow these cookies, you will experience less targeted advertising.
+                <br>
+                <b>Cookies used</b>
+                <br>
+                <br>
+                <b><h5>First party Cookies</h5></b>
+                These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us to know which pages are the most and least popular and see how visitors move around the site. All information these cookies collect is aggregated and therefore anonymous. If you do not allow these cookies, we will not know when you have visited our site, and will not be able to monitor its performance.
+                <br>
+                <b>Cookies used</b>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       <!-- Modal -->
+       <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Privacy</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body"> 
+                <b>Introduction	</b>
+                <br>
+                TANYflights is committed to protecting our customer privacy and takes its responsibility regarding the security of customer information very seriously. We will be clear and transparent about the information we are collecting and what we will do with that information.
+                This Policy sets out the following:
+                What personal data we collect and process about you in connection with your relationship with us as a customer and through your use of our website, mobile applications and online services;
+                Where we obtain the data from;
+                What we do with that data;
+                How we store the data;
+                Who we transfer/disclose that data to;
+                How we deal with your data protection rights;
+                And how we comply with the data protection rules.  
+                All personal data is collected and processed in accordance with Irish, EU and UK data protection laws as applicable.
+                <br>
+                <br>
+                <b>Data Controller	</b>
+                <br>
+                “TANYflights” (referred to as “we”, “us”, “our” or “TANYflights” in this policy) in this policy primarily refers to Ryanair D.A.C., the main operating company of the TANYflights group, and, where appropriate, to other companies in the TANYflights group  (TANYflights DAC, TANYflights Sun, TANYflights UK, Laudamotion and Malta Air) or other entities over which TANYflights exercises management control. TANYflights D.A.C. is the “data controller” of all personal information that is collected and used about TANYflights customers for the purposes of the Irish Data Protection Act 2018 or, as applicable in respect of UK customers, the UK Data Protection Act 2018. Ryanair is registered in Ireland with registration number 104547 and registered offices at TANYflights Dublin Office, Airside Business Park, Swords, Co. Dublin.
+                We may engage third parties to provide services on our behalf. If you book a service offered by a third party (eg travel insurance, car hire, room booking) the third party will be identified in the applicable booking terms and conditions. The third party will be a “data controller” of your personal data in respect of the service they are providing. You should access the privacy policies/statements of those providers directly
+                <br>
+                <br>
+                <b>What we use your personal data for?</b>
+                <br>
+                In most cases we will need to process your personal data so we can process your booking, enter into our contract of carriage and perform that contract with you.
+                You will have the choice to opt in or opt out of receiving marketing communications by indicating your choice on the payment page when booking your flight or by updating your app settings. You will also be given the opportunity at the bottom of every marketing e-mail to unsubscribe / opt out.  See also the section below on your data subject rights.
+                To unsubscribe from push notifications you must update your app settings. Push notifications are set out in the initial permissions when downloading an app and vary depending on whether you have an IOS or android device. You should check the settings and permissions on your device in relation to push notifications and change your settings according to your preferences.
+                We aim to action opt out requests as quickly as we can but it is possible you will receive some marketing communications in the period prior to the request being actioned.
+                Please note that if you opt out of marketing communications you will still receive service communications in relation to existing bookings (such as flight time change notices).
+                Only children aged 16 or over can provide their own consent. For children under this age, consent of the childrens parents or legal guardians is required.
+                <br>
+                <br>
+                <b>How long we keep your data?</b>
+                <br>
+                We will not retain your data for longer than is necessary to fulfil the purpose it is being processed for. We must also consider periods for which we need to retain personal data in order to meet our legal obligations (e.g., in relation to claims for cancelled flights under EU261) or to deal with complaints, queries, regulatory requirements, for audit purposes, to demonstrate compliance with public health regulations and relevant entry requirements and to protect our legal rights in the event of a claim being made. To determine the appropriate retention period, we consider the amount, nature and sensitivity of the personal data, the purposes for which we process it and whether we can achieve those purposes through other means. We will also consider if and how we can minimise over time the personal data that we use, and if we can anonymise your personal data so that it can no longer be associated with you or identify you, in which case we may use that information without further notice to you.  
+                Booking Data is archived 18 months from the date of the flight, once there are no outstanding refunds or money due. In general, most Booking Data is deleted 7 years after the date of the flight. Once this information is archived all payment and travel document information is obscured. Only limited roles within myTANYflights have access to this archived data which is stored in order to create summarised models of data and in some instances data to respond to legal claims.
+                For myTANYflights accounts, inactive accounts are generally closed 3 years after the last flight was flown. You can make an erasure request at any time by submitting your request through our dedicated web-form (see ‘Your data protection rights’ section). Once you exercise your right to erasure your myTANYflights account will be closed and any data associated with any companion will be deleted. However, a copy of the Booking Data will be retained in our systems as described above. You can change the personal data in your myTANYflights account directly in the account. Any changes made by you will only apply to bookings made after these changes were made and will not alter existing bookings.
+                We process data subject requests using a specialised data protection tool provided by  OneTrust. Access to this system is restricted to a limited number of roles in Ryanair and data held in OneTrust is encrypted. We separately keep a log of erasure requests made through our online form, for one year.
+                We use a third party tool called Zendesk to manage customer service interactions, including complaints, chats, refund requests, EU261 claims, serious illness claims and mishandled baggage claims. This data is retained for a period that reflects the statute of limitations period for contract claims which is at most 10 years.
+                <br>
+                <br>
+                <b>Security of your personal data</b>
+                <br>
+                We are committed to ensuring the security and confidentiality of your personal data. Taking into account the nature of your personal data and the risks of processing, we have put in place appropriate technical and organizational measures as required by applicable legal provisions to ensure an appropriate level of security and to prevent any accidental or unlawful destruction, loss, alteration, disclosure, intrusion of or unauthorized access to these data.
+                All payment details are transmitted and stored in compliance with Payment Card Industry Data Security Standards (PCI DSS).
+                We may disclose your information to trusted third parties for the purposes set out in this Privacy Policy. We require all third parties to have appropriate technical and operational security measures in place to protect your personal data, in line with Irish, UK and EU law on data protection rules. 
+                In the event that TANYflights suffers a breach involving your personal data and this breach creates a high risk to your rights, we will inform you about the breach, the likely consequences of it and the measures we have put in place to protect you and others in accordance with our GDPR requirements.
+                <br>
+                <br>
+                <b>Sharing and transferring your personal data</b>
+                <br>
+                Your personal data may be shared with other companies within the TANYflights Group.
+                We may also share your personal data with the following third parties for the purpose described in this Privacy Policy:
+                a.    Government authorities, law enforcement bodies, regulators and airports in your itinerary or to which your flight may fly over for compliance with legal requirements;
+                b.    Trusted GDS (Global Distribution System) agents through which you book your TANYflights flight;
+                c.     Partner airlines required to deliver the services you have asked for, such as Air Europa;
+                d.    Trusted service providers we are using to run our business such as ground handling agents assisting our passengers at airports in all countries we operate in, call centres and flight connection service providers providing assistance to our customers, cloud service and e-mail marketing service providers assisting our marketing team with running customer surveys and providing targeted marketing campaigns;
+                e.    Credit and debit card companies which facilitate your payments to us, and anti-fraud screening, which may need information about your method of payment and flight booking to process payment or ensure the security of your payment transaction;
+                f.     Legal and other professional advisers, law courts and law enforcement bodies in all countries we operate in, in order to enforce our legal rights in relation to our contract with you;
+                g.    Our trusted third party ancillary partners (identified on our website) who offer travel related products and services on our website:  If you choose to purchase products or services offered on our websites by third parties such as Europ Assistance Travel Insurance, you may be a customer of both TANYflights and these third parties, and we and our partners may collect and share information about you, such as your contact details and your billing information. We are not responsible for third parties’ use of your personal data where such use is permitted for their own purposes. Please consult their privacy policies for further information.
+                h.    Social media: You may be able to access third party social media services through our website or App or before coming to our website or App. When you are registered with your social service account, we will obtain the personal information you choose to share with us through these social media services pursuant to their privacy settings in order to improve and personalize your use of our website or App. We may also use social media plugins on our website or App. As a result your information will be shared with your social media provider and possibly presented on your social media profile to be shared with others in your network. Please refer to the privacy policy of these third-party social media providers to find out more about these practices. 
+                Our website contains links to other websites. Once you use those links and leave our website, we do not have any control over that other website. We are not responsible for the protection and privacy of any data which you provide whilst visiting these other websites. They are governed by their own privacy statements.
+                <br>
+                <br>
+                <b>Cookies and site tracking</b>
+                <br>
+                We use cookies on our website. TANYflights DAC is the data controller of any information we obtain from the use of cookies. Please refer to our Cookie Policy and cookie preference centre. 
+                <br>
+                <br>
+                <b>Data Protection Officer</b>
+                <br>
+                We have appointed a Data Protection Officer (“DPO”) to oversee compliance with this policy. In addition, you always have the right to make a complaint at any time to a supervisory authority. The Irish Data Protection Commission is the lead data protection supervisory authority for TANYflights DAC so please be aware that your complaint may be transferred to the Irish Data Protection Commission.  
+                <br>
+                <br>
+                <b>Your Data Protection Rights</b>
+                <br>
+                The GDPR and other data protection laws give you specific rights in relation to your personal information. Details of these rights and how to exercise them are set out below.
+                DATA RIGHTS
+                Your rights include the following:
+                ·       Opt out / Unsubscribe. You can request to be removed from our marketing mailing list by clicking here. This requires verification of your email address. Please follow the instructions provided through the link.
+                Please note that if you opt out of marketing communications you will still receive service communications in relation to existing bookings. These can include information about the services you may be using (e.g., seat reservation, checked baggage, etc.).
+                ·       Request for erasure of your personal information (right to be forgotten). You may ask us to delete or remove personal data, where we have no legal basis to continue to process it. This includes deletion of the myTANYflights account linked to the email address provided and/or used in booking a flight. However, we will retain the personal data that relates to a contract between you and TANYflights (flight booking) to perform the contract, defend or pursue our legal rights and meet our obligations towards regulatory or governmental authorities.
+                You can request erasure by clicking here.  This requires verification of your email address. Please follow the instructions provided through the link.
+                Please note we will make every effort to erase data where this right has been exercised by you and we no longer have a legal basis for processing same but some personal data sets are impossible (or infeasible) to edit or remove (e.g., server backup or microfiche).
+                ·       Object to processing. You have the right to object to the use of your data for direct marketing purposes at any time through this form. This will remove you from our marketing databases. It requires verification of your email address. Please follow the instructions provided through the link.  You may also request us to stop processing your personal data where we are doing so based on legitimate interests (e.g., address personalized offers to you in the booking process) unless we require your data for dealing with legal claims or we have compelling legitimate grounds which override your rights. If this is the basis for your objection, then click here for our online request form and set out in the comment area your basis for objection.
+                ·       Request information. The section on ‘What personal data we collect’ sets out what personal data we collect and the section ‘What we use your personal data for’ sets out the reasons we collect it.
+                ·       Request access to the personal data we hold about you. If you have a myTANYflights account, you can view the personal data held in this account by logging into your account. If you wish to access other personal data we hold about you other than what is in your myTANYflights account, then you can use our webform available here. You will need to provide a copy of your photo ID, either passport or national ID, when making your request so we can verify your identity. We may not be able to provide you access to the data when it involves information relating to others who have not consented to the disclosure of their information. We will also have to verify your email address before we can send the data to the email address provided in the request.
+                ·       Request correction of the personal information that we hold about you. This can be done by you through your myTANYflights account.  We have included tools in your myTANYflights account, allowing you to directly change personal data you have provided there.
+                Please note that if you require changes in active bookings (i.e., where the flight has not yet taken place), you need to contact our Customer Services directly, as set out in our General Terms and Conditions of Carriage and FAQs.
+                ·       Object to automated decision-making including profiling, which produce a legal effect or similarly significant effects. We do use personal data to personalize the services and offers you receive. We also use automated processes to assist us in determining where additional in-person travel document checks are required. We do not engage in automated processing with legal or similarly significant effects.
+                ·       Request the restriction of processing of your personal information. This enables you to ask us to suspend the processing of personal information about you, but only in limited circumstances, which you must set out in the comment section of our webform. Click here
+                ·       Request portability of your personal information in an electronic and structured form to you or to another party (commonly known as a right to “data portability”). This enables you to take your data from us in an electronically useable format and to be able to transfer your data to another party in an electronically useable format. Click here
+                ·       Withdraw consent. In the limited circumstances where you may have provided your consent to the collection, processing and transfer of your personal information for a specific purpose, you have the right to withdraw your consent for that specific processing at any time. In relation to marketing communications, this can be done as set out above under opt out / unsubscribe. In your myTANYflights account this can be done through your account by using the delete buttons provided where consent is the basis for our processing. Once we have received notification that you have withdrawn your consent, we will no longer process your information for the purpose or purposes you originally agreed to, unless we have another legitimate basis for doing so in law.
+                ·       Third parties. If you are applying on behalf of another person then we require a signed letter of authority from the data subject in the form provided here.  If you are applying as a parent/guardian of children then we require the signed letter of authority provided here. In addition to the other requirements set out below, we will also verify the email of the data subject before processing such requests. If you wish to make a request on behalf of someone else, please use our third party webform, which allows for attachment of 1) required documents to allow us to validate the identity of the data subject and 2) the above signed letter of authority from the person making the request on behalf of a data subject.
+                We will respond to any request you make to exercise your rights within one month. However, where required for complex or numerous requests, we may notify you (within the initial one month period) that a further period of up to two months is required in order to respond to the request.
+                These requests cannot be processed if made via email, due to their volume and the need to verify your identity before we can act on your request. This is another appropriate security measure to ensure that personal information is not disclosed to any person who has no right to receive it.
+                You will not have to pay a fee to access your personal information (or to exercise any of the other rights). However, we may charge a reasonable fee if your request for access is clearly unfounded or excessive. Alternatively, we may refuse to comply with the request in such circumstances.
+                <br>
+                <br>
+                <b>Changes to Privacy Policy</b>
+                <br>	
+                We may make changes to this privacy policy at any time and if we make any material changes we will bring these changes to your attention. 
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+    <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Contact Us</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">	
+                If you have any further questions about this policy or how we handle your personal information, which are not dealt with here or through our webform or through your myTANYflights account, please get in touch with us by writing to our Data Protection Officer at TANYflights Head Office, Airside Business Park, Swords, County Dublin, Ireland or emailing our email TANYflights@gmail.com.            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
