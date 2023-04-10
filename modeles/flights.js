@@ -9,11 +9,11 @@ const flight=new Schema({
     },
     flightTime:{
         type:Date,
-        default:Date.now()
+        required:true
     },
     landTime:{
         type:Date,
-        default:Date.now()+(60*60*1000)
+        required:true
     },
     source:{
         type:String,
