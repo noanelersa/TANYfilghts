@@ -15,6 +15,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(express.json());
 app.set("view engine", "ejs");
+app.use('/flight', require('./routes/flight'));
 app.use('/', homePage);
 app.use(express.static("public"));
 app.use(express.static("img"));

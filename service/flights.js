@@ -24,10 +24,10 @@ const getFlightById = async(id)=>{
 };
 
 const deleteFlight = async(id)=>{
-    const flight=getFlightById(id);
+    const flight=await getFlightById(id);
     if(!flight)
         return null;
-    return (await flight).deleteOne(flight);
+    return await Flight.deleteOne(flight);
 };
 
 const getFlights = async ()=>{

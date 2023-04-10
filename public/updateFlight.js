@@ -1,9 +1,9 @@
-let cards = 0;
-const airline = $('#airlineNameUpdate')[0];
-const flightTime = $('#flightTimeUpdate')[0];
-const landTime = $('#landTimeFlightUpdate')[0];
-const source = $('#sourceFlightUpdate')[0];
-const destination = $('#destinationFlightUpdate')[0];
+let cardsUpdate = 0;
+const airlineUpdate = $('#airlineNameUpdate')[0];
+const flightTimeUpdate = $('#flightTimeUpdate')[0];
+const landTimeUpdate = $('#landTimeFlightUpdate')[0];
+const sourceUpdate = $('#sourceFlightUpdate')[0];
+const destinationUpdate = $('#destinationFlightUpdate')[0];
 const id = $('#flightID')[0];
 
 function resetUpdatePage() {
@@ -14,7 +14,7 @@ function resetUpdatePage() {
     row.className = "row";
     row.id = "updateFlight"
     document.getElementById("modalBodyUpdate").appendChild(row);
-    cards = 0;
+    cardsUpdate = 0;
 }
 
 function updateAllFlight(){
@@ -23,7 +23,7 @@ function updateAllFlight(){
         url: "/flight/allFlights",
     }).done(function (data){
         resetUpdatePage()
-        data.forEach((data) => {addElementFlight(data)});
+        data.forEach((data) => {addElementFlightUpdate(data)});
         $('#allFlightUpdate').modal('show');
     })
 }
@@ -45,7 +45,7 @@ function updateForm(id,airline,flightTime,land,source,des) {
     $('#UF').modal('show');
 }
 
-function addElementFlight(flight){
+function addElementFlightUpdate(flight){
     const dateAll = flight.flightTime;
     const date = String(dateAll).split("T")[0].split("-")
     const hour = String(dateAll).split("T")[1].split(":")
@@ -75,8 +75,8 @@ function addElementFlight(flight){
     card.appendChild(cardBody);
     col.appendChild(card)
     document.getElementById('updateFlight').appendChild(col);
-    cards++;
-    if (cards % 4 === 0){
+    cardsUpdate++;
+    if (cardsUpdate % 4 === 0){
         const oldRow = document.getElementById('updateFlight');
         const newRow = document.createElement('div')
         newRow.className = "row";
@@ -84,67 +84,66 @@ function addElementFlight(flight){
         oldRow.id = ""
         newRow.id = "updateFlight"
         document.getElementById("modalBodyUpdate").appendChild(newRow);
-        cards = 0;
+        cardsUpdate = 0;
     }
 }
-updateAllFlight();
-function checkValidCreate() {
+function checkValidUpdate() {
     function setError(element) {
         element.style.border = "solid 2px red";
     }
     function setOk(element){
         element.style.border = "solid 1px #dee2e6";
     }
-    if(airline.value == null || airline.value === ""){
-        setError(airline);
+    if(airlineUpdate.value == null || airlineUpdate.value === ""){
+        setError(airlineUpdate);
         return false;
     }
     else{
-        setOk(airline);
+        setOk(airlineUpdate);
     }
-    if(flightTime.value == null || flightTime.value === ""){
-        setError(flightTime);
+    if(flightTimeUpdate.value == null || flightTimeUpdate.value === ""){
+        setError(flightTimeUpdate);
         return false;
     }
     else{
-        setOk(flightTime);
+        setOk(flightTimeUpdate);
     }
-    if(landTime.value == null || landTime.value === ""){
-        setError(landTime);
+    if(landTimeUpdate.value == null || landTimeUpdate.value === ""){
+        setError(landTimeUpdate);
         return false;
     }
     else{
-        setOk(landTime);
+        setOk(landTimeUpdate);
     }
-    if(source.value == null || source.value === ""){
-        setError(source);
+    if(sourceUpdate.value == null || sourceUpdate.value === ""){
+        setError(sourceUpdate);
         return false;
     }
     else{
-        setOk(source);
+        setOk(sourceUpdate);
     }
-    if(destination.value == null || destination.value === ""){
-        setError(destination);
+    if(destinationUpdate.value == null || destinationUpdate.value === ""){
+        setError(destinationUpdate);
         return false;
     }
     else{
-        setOk(destination);
+        setOk(destinationUpdate);
     }
     return true;
 }
 
 $('#submitUpdate').click(function(e){
     e.preventDefault();
-    if(!checkValidCreate()){return;}
+    if(!checkValidUpdate()){return;}
     $.ajax({
         type: 'POST',
         url: "/flight/update?id=" + id.className,
         data:{
-            airlineName: airline.value,
-            flightTime: flightTime.value,
-            landTime: landTime.value,
-            source: source.value,
-            destination: destination.value
+            airlineName: airlineUpdate.value,
+            flightTime: flightTimeUpdate.value,
+            landTime: landTimeUpdate.value,
+            source: sourceUpdate.value,
+            destination: destinationUpdate.value
         },
         success: function (){
             $('#allFlightUpdate').modal('hide');

@@ -27,24 +27,24 @@ document.getElementById("landTimeFlightCreate").setAttribute("min", today);
 
 
 
-const airline = $('#airlineNameCreate')[0];
-const flightTime = $('#flightTimeCreate')[0];
-const landTime = $('#landTimeFlightCreate')[0];
-const source = $('#sourceFlightCreate')[0];
-const destination = $('#destinationFlightCreate')[0];
+const airlineCreate = $('#airlineNameCreate')[0];
+const flightTimeCreate = $('#flightTimeCreate')[0];
+const landTimeCreate = $('#landTimeFlightCreate')[0];
+const sourceCreate = $('#sourceFlightCreate')[0];
+const destinationCreate = $('#destinationFlightCreate')[0];
 
 $('#submitCreate').click(function (e){
     e.preventDefault();
-    if(!checkValidCreate()){return;}
+    if(!checkValidCreate()){console.log("yes its me mario");return;}
     $.ajax({
         type: 'POST',
         url: "/flight/create",
         data:{
-            airlineName: airline.value,
-            flightTime: flightTime.value,
-            landTime: landTime.value,
-            source: source.value,
-            destination: destination.value
+            airlineName: airlineCreate.value,
+            flightTime: flightTimeCreate.value,
+            landTime: landTimeCreate.value,
+            source: sourceCreate.value,
+            destination: destinationCreate.value
         },
         success: function (){
             $('#CF').modal('hide');
@@ -56,44 +56,45 @@ $('#submitCreate').click(function (e){
 function checkValidCreate() {
     function setError(element) {
         element.style.border = "solid 2px red";
+        console.log(element)
     }
     function setOk(element){
         element.style.border = "solid 1px #dee2e6";
     }
-    if(airline.value == null || airline.value === ""){
-        setError(airline);
+    if(airlineCreate.value == null || airlineCreate.value === ""){
+        setError(airlineCreate);
         return false;
     }
     else{
-        setOk(airline);
+        setOk(airlineCreate);
     }
-    if(flightTime.value == null || flightTime.value === ""){
-        setError(flightTime);
+    if(flightTimeCreate.value == null || flightTimeCreate.value === ""){
+        setError(flightTimeCreate);
         return false;
     }
     else{
-        setOk(flightTime);
+        setOk(flightTimeCreate);
     }
-    if(landTime.value == null || landTime.value === ""){
-        setError(landTime);
+    if(landTimeCreate.value == null || landTimeCreate.value === ""){
+        setError(landTimeCreate);
         return false;
     }
     else{
-        setOk(landTime);
+        setOk(landTimeCreate);
     }
-    if(source.value == null || source.value === ""){
-        setError(source);
+    if(sourceCreate.value == null || sourceCreate.value === ""){
+        setError(sourceCreate);
         return false;
     }
     else{
-        setOk(source);
+        setOk(sourceCreate);
     }
-    if(destination.value == null || destination.value === ""){
-        setError(destination);
+    if(destinationCreate.value == null || destinationCreate.value === ""){
+        setError(destinationCreate);
         return false;
     }
     else{
-        setOk(destination);
+        setOk(destinationCreate);
     }
     return true;
 }
