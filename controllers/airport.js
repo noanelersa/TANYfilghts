@@ -12,8 +12,12 @@ const updateAirport = async (req , res)=>{
     res.json(airport);
 };
 
+const getHomePage= async (req,res)=>{
+    res.render('../views/createAirport.ejs');
+}
 module.exports={
     deleteAirport,
     createAirport,
-    updateAirport
+    updateAirport,
+    getHomePage
 };
