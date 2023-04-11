@@ -15,6 +15,7 @@ const updateClient = async (req , res)=>{
 const getHomePage= async (req,res)=>{
     res.render('../views/createClient.ejs');
 }
+
 module.exports={
     deleteClient,
     createClient,
