@@ -6,6 +6,9 @@ async function login(username, password) {
 }
 
 async function register(username, password, email,firstname,lastname,age) {
+    if( await getUserByUsername(username)){
+        throw "Username Is Already Taken"
+    }
 
     const user = new User({
         username: username,
@@ -18,5 +21,8 @@ async function register(username, password, email,firstname,lastname,age) {
 
     await user.save()        
 }
+const getUserByUsername= async (username) => {
+    return await User.findOne(({username : username}));
+};
 
 module.exports = { login, register }

@@ -102,8 +102,9 @@ $('#userUpdateSubmit').click(function(e){
         },
         success: function (){
            $('#UserUpdateModal').modal('hide');
+           window.location.reload();
         },
-        error: function (){alert("error")}
+        error: function (){alert("Username Is Already Taken")}
     });
 
 

@@ -2,10 +2,12 @@ const User= require('../models/User')
 var mongoose = require('mongoose');
 
 const updateUser = async (id,username, password ,email,firstname, lastname, age) => {
-
     const user = await getUserById(id);
     if (!user)
         return null;
+    if( await getUserByUsername(username) && user.username !== username){
+        return null;
+    }
     user.username = username;
     user.password = password;
     user.email = email;

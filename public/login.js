@@ -125,6 +125,7 @@ $('#registerButton').click(function (e){
             },
             success:(function (){
                 $('#registerForm').modal('hide');
+                window.location.reload();
             }),
             error:function (){
                 $('#errorRegisterLabel').show();

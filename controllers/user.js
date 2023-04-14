@@ -6,6 +6,7 @@ const updateUser = async (req, res) => {
     if (!user) {
         return res.status(404).json({ errors: ['User not found'] });
     }
+    req.session.username = req.body.username;
     res.json(user);
 
 };
