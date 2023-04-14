@@ -3,14 +3,12 @@ const loginService = require("../services/login")
 
 
 function renderHomePage(req, res) {  
-  res.render("homeScreen")
+  res.render("homeScreen", {username: req.session.username})
 }
-
-
 
 function logout(req, res) {
   req.session.destroy(() => {
-    res.redirect('/login');
+    res.redirect('/');
   });
 }
 
@@ -27,11 +25,10 @@ async function login(req, res) {
 }
 
 async function register(req, res) {
-  const { username, password } = req.body
-  console.log(username + " " + password);
+  const { username, password ,firstname, lastname, email, age} = req.body
 
   try {
-    await loginService.register(username, password)    
+    await loginService.register(username, password ,firstname, lastname, email, age)
     req.session.username = username
     res.redirect('/')
   }

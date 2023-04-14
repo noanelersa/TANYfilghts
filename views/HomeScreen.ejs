@@ -24,6 +24,8 @@
                 <a class="navbar-brand test nav-item header_feature h1" href="#" style="height: 50px;"><h1>TANY FLIGHTS</h1></a>
             </ul>
             <span class="d-flex">
+                 <button type="button" class="btn btn-light" id="updateUserButton">Update User</button>
+                 <button type="button" class="btn btn-light" id="deleteUserButton">Delete User</button>
                 <span class="nav-item rand">
                   <a class="nav-link header_feature big" href="#"><i class="bi bi-person-circle"></i></a>
                 </span>
@@ -434,7 +436,17 @@
           </div>
         </div>
       </div>
-    <%- include('login', {}); %>
+    <%- include('login', {username:username}); %>
+    <%- include('updateUser', {}); %>
+    <script src="/homeScreen.js"></script>
+    <script>
+        $('#updateUserButton').click(function (){
+            userUpdateMenu("<%=username%>");
+        })
+        $('#deleteUserButton').click(function (){
+            deleteUser("<%=username%>");
+        })
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   </body>
 </html>

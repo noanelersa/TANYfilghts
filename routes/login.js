@@ -8,5 +8,4 @@ router.post("/login", loginController.login);
 router.get('/logout',loginController.logout);
 router.get('/', loginController.renderHomePage);
 
-
 module.exports = router;

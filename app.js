@@ -3,10 +3,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const homePage = require('./routes/homePage');
-const newLocal = require('custom-env');
-newLocal.env(process.env.NODE_ENV, './config');
 
-mongoose.connect(process.env.CONNECTION_STRING, 
+mongoose.connect('mongodb+srv://alicemager006:k8SQCfD1JAibNFNE@cluster0.t3ryxdl.mongodb.net/?retryWrites=true&w=majority',
                 {   useNewUrlParser: true, 
                     useUnifiedTopology: true });
 
@@ -22,9 +20,10 @@ app.use(session({
     resave: false
 }));
 app.use("/",require("./routes/login"));
+app.use("/user",require("./routes/user"));
 app.use(express.static("public"));
 app.use(express.static("img"));
 
 
-app.listen(process.env.PORT); 
+app.listen(8081);
 
