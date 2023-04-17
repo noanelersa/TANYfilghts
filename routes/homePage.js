@@ -1,9 +1,8 @@
 const express = require('express');
 var router = express.Router();
 const homeController = require('../controllers/homePage');
-const airportController= require('/controllers/airport');
-const clientController= require('/controllers/client');
-const {getHomePage} = require("../controllers/airport");
+const airportController= require('../controllers/airport');
+const clientController= require('../controllers/client');
 router.route('/')
     .get(homeController.getHomePage)
 
@@ -12,6 +11,6 @@ router.route('/')
     .put(homeController.updateArticle)
     .delete(homeController.deleteArticle);*/
 
-router.route('test').get(airportController).get(airportController).get(getHomePage)// what here
-router.route('test').get(clientController).get(clientController).get(getHomePage)
+router.route('test').get(airportController.getHomePage)// what here
+router.route('test').get(clientController.getHomePage)
 module.exports = router;

@@ -1,4 +1,4 @@
-const Flight = require('../modeles/flights');
+const Flight = require('../models/flights');
 const mongoose = require("mongoose");
 //create delete update getAll getSpecific
 const createFlight = async(airlineName,flightTime,landTime,source,destination)=>{

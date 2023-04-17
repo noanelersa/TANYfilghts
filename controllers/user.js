@@ -1,4 +1,4 @@
-const userService = require('../services/user');
+const userService = require('../service/user');
 const {model} = require("mongoose");
 
 const updateUser = async (req, res) => {

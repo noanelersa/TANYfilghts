@@ -4,7 +4,7 @@ const flightTimeUpdate = $('#flightTimeUpdate')[0];
 const landTimeUpdate = $('#landTimeFlightUpdate')[0];
 const sourceUpdate = $('#sourceFlightUpdate')[0];
 const destinationUpdate = $('#destinationFlightUpdate')[0];
-const id = $('#flightID')[0];
+const idFlight = $('#flightID')[0];
 
 function resetUpdatePage() {
     while(document.getElementById('modalBodyUpdate').hasChildNodes()){
@@ -137,7 +137,7 @@ $('#submitUpdate').click(function(e){
     if(!checkValidUpdate()){return;}
     $.ajax({
         type: 'POST',
-        url: "/flight/update?id=" + id.className,
+        url: "/flight/update?id=" + idFlight.className,
         data:{
             airlineName: airlineUpdate.value,
             flightTime: flightTimeUpdate.value,

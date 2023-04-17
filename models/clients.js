@@ -20,7 +20,6 @@ const client = new Schema({
     },
     age:{
         type: Number,
-        required: 18, // change
         required: true
     },
     emailAddress:{

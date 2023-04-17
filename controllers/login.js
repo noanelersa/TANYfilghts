@@ -1,4 +1,4 @@
-const loginService = require("../services/login")
+const loginService = require("../service/login")
 
 
 
@@ -25,7 +25,7 @@ async function login(req, res) {
 }
 
 async function register(req, res) {
-  const { username, password ,firstname, lastname, email, age} = req.body
+  const { username, password, email ,firstname, lastname, age} = req.body
 
   try {
     await loginService.register(username, password ,firstname, lastname, email, age)

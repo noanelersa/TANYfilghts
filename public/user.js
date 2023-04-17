@@ -5,7 +5,7 @@ const emailUpdate = $('#emailUpdate')[0];
 const firstnameUpdate = $('#firstnameUpdate')[0];
 const lastnameUpdate = $('#lastnameUpdate')[0];
 const ageUpdate = $('#ageUpdate')[0];
-const id = $('#userUpdateId')[0];
+const idUser = $('#userUpdateId')[0];
 
 
 
@@ -22,7 +22,7 @@ function userUpdateMenu(username){
         firstnameUpdate.value = user.firstname;
         lastnameUpdate.value = user.lastname;
         ageUpdate.value= user.age;
-        id.className = user._id;
+        idUser.className = user._id;
         document.getElementById("userUpdateId").style.display="none"
         $('#UserUpdateModal').modal('show');
     })
@@ -54,6 +54,11 @@ function checkValidUpdate() {
         return false;
     }
     else{
+        if(!String(emailUpdate.value).includes("@")){
+            alert("Email input is not valid");
+            setError(emailUpdate);
+            return false;
+        }
         setOk(emailUpdate);
     }
     if(firstnameUpdate.value == null || firstnameUpdate.value === ""){
@@ -91,7 +96,7 @@ $('#userUpdateSubmit').click(function(e){
     if(!checkValidUpdate()){return;}
     $.ajax({
         type: 'POST',
-        url: "/user/update?id=" + id.className,
+        url: "/user/update?id=" + idUser.className,
         data:{
             username: usernameUpdate.value,
             password: passwordUpdate.value,
