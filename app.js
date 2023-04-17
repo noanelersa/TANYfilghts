@@ -15,9 +15,16 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(express.json());
 app.set("view engine", "ejs");
-app.use('/', homePage);
+const session = require('express-session');
+app.use(session({
+    secret: 'login',
+    saveUninitialized: false,
+    resave: false
+}));
+app.use("/",require("./routes/login"));
 app.use(express.static("public"));
 app.use(express.static("img"));
 
 
 app.listen(process.env.PORT); 
+
