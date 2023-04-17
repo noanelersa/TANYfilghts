@@ -23,8 +23,9 @@ app.use(session({
     resave: false
 }));
 app.use("/",require("./routes/login"));
+app.use("/user",require("./routes/user"));
 app.use(express.static("public"));
 app.use(express.static("img"));
 
 
-app.listen(process.env.PORT); 
+app.listen(process.env.PORT);

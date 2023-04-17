@@ -19,14 +19,33 @@
                 <form>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">username:</label>
-                        <input type="text" class="form-control" id="usernameInputRegister">
+                        <input type="text" class="form-control" id="usernameInputRegister" maxlength="10">
                         <label id="usernameLabelRegister">Please Enter A Username</label>
                     </div>
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">password:</label>
-                        <input class="form-control" id="passwordInputRegister" type="password">
+                        <input class="form-control" id="passwordInputRegister" type="password" maxlength="20">
                         <label id="passwordLabelRegister">Please Enter A Password</label>
-
+                    </div>
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">firstname:</label>
+                        <input class="form-control" id="firstnameInputRegister" type="text" maxlength="15">
+                        <label id="firstnameLabelRegister">Please Enter Your First Name</label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">lastname:</label>
+                        <input class="form-control" id="lastnameInputRegister" type="text" maxlength="15">
+                        <label id="lastnameLabelRegister">Please Enter Your Last Name</label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">email:</label>
+                        <input class="form-control" id="emailInputRegister" type="email" maxlength="30">
+                        <label id="emailLabelRegister">Please Enter Your Email</label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">age:</label>
+                        <input class="form-control" id="ageInputRegister" type="number" min="1" max ="120">
+                        <label id="ageLabelRegister">Please Enter Your Age</label>
                     </div>
                 </form>
                 <label id="errorRegisterLabel">Username Is Already Taken</label>
