@@ -15,7 +15,6 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(express.json());
 app.set("view engine", "ejs");
-app.use('/flight', require('./routes/flight'));
 const session = require('express-session');
 app.use(session({
     secret: 'login',
@@ -23,7 +22,9 @@ app.use(session({
     resave: false
 }));
 app.use("/",require("./routes/login"));
+app.use('/flight', require('./routes/flight'));
 app.use("/user",require("./routes/user"));
+app.use("/airport",require("./routes/airport"));
 app.use(express.static("public"));
 app.use(express.static("img"));
 
