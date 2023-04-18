@@ -9,57 +9,57 @@
 <!-- Button trigger modal -->
 
 <!-- Modal -->
-<div class="modal fade" id="airportModalRegister" tabindex="-1" aria-labelledby="airportLabelRegister" aria-hidden="true">
+<div class="modal fade" id="airportModalUpdate" tabindex="-1" aria-labelledby="airportLabelUpdate" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="airportLabelRegister">Airport Register</h1>
+                <h1 class="modal-title fs-5" id="airportLabelUpdate">Airport Update</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">name:</label>
-                        <input type="text" class="form-control" id="nameAirportInputRegister" maxlength="15">
-                        <label id="nameAirportLabelRegister">Please Enter a Name</label>
+                        <input type="text" class="form-control" id="nameAirportInputUpdate" maxlength="15">
+                        <label id="nameAirportLabelUpdate">Please Enter a Name</label>
                     </div>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">password:</label>
-                        <input type="password" class="form-control" id="passwordAirportInputRegister" maxlength="20">
-                        <label id="passwordAirportLabelRegister">Please Enter a Password</label>
+                        <input type="password" class="form-control" id="passwordAirportInputUpdate" maxlength="20">
+                        <label id="passwordAirportLabelUpdate">Please Enter a Password</label>
                     </div>
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">state:</label>
-                        <input class="form-control" id="stateAirportInputRegister" type="text" maxlength="30">
-                        <label id="stateAirportLabelRegister">Please Enter a State</label>
+                        <input class="form-control" id="stateAirportInputUpdate" type="text" maxlength="30">
+                        <label id="stateAirportLabelUpdate">Please Enter a State</label>
                     </div>
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">publish:</label>
-                        <input class="form-control" id="publishAirportInputRegister" type="date">
-                        <label id="publishAirportLabelRegister">Please Enter a published day</label>
+                        <input class="form-control" id="publishAirportInputUpdate" type="date">
+                        <label id="publishAirportLabelUpdate">Please Enter a published day</label>
                     </div>
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">owner:</label>
-                        <input class="form-control" id="ownerAirportInputRegister" type="text" maxlength="20">
-                        <label id="ownerAirportLabelRegister">Please Enter The Airport Owner Name</label>
+                        <input class="form-control" id="ownerAirportInputUpdate" type="text" maxlength="20">
+                        <label id="ownerAirportLabelUpdate">Please Enter The Airport Owner Name</label>
                     </div>
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">number of terminals:</label>
-                        <input class="form-control" id="numTerminalsAirportInputRegister" type="number">
-                        <label id="numTerminalsAirportLabelRegister">Please Enter The Number of Terminals</label>
+                        <input class="form-control" id="numTerminalsAirportInputUpdate" type="number">
+                        <label id="numTerminalsAirportLabelUpdate">Please Enter The Number of Terminals</label>
                     </div>
                 </form>
-                <label id="errorAirportRegisterLabel">Airport Name Is Already Taken</label>
+                <label id="errorAirportUpdateLabel">Airport Name Is Already Taken</label>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="createAirportBtn">Submit</button>
+                <button type="button" class="btn btn-primary" id="UpdateAirportBtn">Submit</button>
             </div>
         </div>
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script src="createAirport.js"></script>
+<script src="airport.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>

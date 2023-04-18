@@ -13,9 +13,10 @@ try {
         e.preventDefault();
         reloadAllFlightPageDelete();
     });
+    $('#airportCreate').click(function (e){
+        e.preventDefault();
+        $('#airportModalRegister').modal('show');
+    });
 }
 catch (e) {}
-$('#airportCreate').click(function (e){
-    e.preventDefault();
-    $('#airportModalRegister').modal('show');
-});
+

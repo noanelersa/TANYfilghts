@@ -2,10 +2,10 @@ const Airport= require('../models/airports')
 // create , get(for each) , getAll , update , delete
 
 const createAirport = async (name, password, state, published, owner, numOfTerminals) => {
-    if(getAirportByName(name)._id){
-        console.log(Airport.find({name:name})._id)
+    if((await getAirportByName(name))){
         return null;
     }
+    console.log((await getAirportByName(name)))
 
     const airport = new Airport({
         name: name,
@@ -30,11 +30,12 @@ const getAirports = async () =>{
 const getAirportByName = async (name)=>{
     return await Airport.findOne({name:name});
 };
-const updateAirport = async (name,password, state, published, owner, numOfTerminals) => {
-    const airport = await getAirportByName(name);
+const updateAirport = async (oldName,name,password, state, published, owner, numOfTerminals) => {
+    const airport = await getAirportByName(oldName);
     if (!airport){
         return null;
     }
+    airport.name = name
     airport.password = password
     airport.name = name;
     airport.state = state;

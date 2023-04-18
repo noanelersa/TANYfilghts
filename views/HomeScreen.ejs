@@ -13,8 +13,7 @@
 
 
   <body>
-
-
+  <div id="usernameID" class="<%=username%>" hidden="true"></div>
   <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid toolbar ">
@@ -90,6 +89,11 @@
     <button class="create" id="createFlightBtn">create flight</button>
     <button class="update" id="updateFlightBtn">update flight</button>
     <button class="delete" id="deleteFlightBtn">delete flight</button>
+    <button class="update" id="updateAirportBtn">update airport</button>
+    <button class="update" id="deleteAirportBtn">delete airport</button>
+  <%}%>
+  <%if(userType === "admin") {%>
+      <button class="create" id="airportCreate">create airport</button>
   <%}%>
     <div>
     <div class="container text-center">
@@ -447,14 +451,15 @@
         </div>
       </div>
 
-  <button type="button" class="btn btn-light" id="airportCreate">create airport</button>
+
 
     <%- include('createFlight',{})%>
     <%- include('deleteFlight',{})%>
     <%- include('updateFlight',{})%>
     <%- include('login', {username:username}); %>
     <%- include('updateUser', {}); %>
-    <%- include('airportsRegister', {}); %>
+    <%- include('createAirport', {}); %>
+    <%- include('updateAirport', {}); %>
 
     <script>
         $('#updateUserButton').click(function (){
@@ -463,6 +468,12 @@
         $('#deleteUserButton').click(function (){
             deleteUser("<%=username%>");
         })
+        if("<%=userType%>" === 'airport' || "<%=userType%>" === 'admin'){
+            $('#updateAirportBtn').click(function (e){
+                e.preventDefault();
+                updateAirportMenu("<%=username%>")
+            })
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="/homeScreen.js"></script>
