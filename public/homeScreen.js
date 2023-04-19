@@ -28,6 +28,18 @@ $('#createFlightBtn').click(function (e){
         e.preventDefault();
         updateFormUpdate(document.getElementById('usernameID').className);
     })
+    $('#myButtonLondon').click(function (e){
+        $('#paymentModal').modal('show');
+        $('#londonModal').modal('hide');
+    })
+    $('#myButtonParis').click(function (e){
+        $('#paymentModal').modal('show');
+        $('#ParisModal').modal('hide');
+    })
+    $('#myButtonNewYork').click(function (e){
+        $('#paymentModal').modal('show');
+        $('#newYorkModal').modal('hide');
+    })
     function openPopup(){
         const popup = document.getElementById("popup");
         return popup.classList.add("open-popup");

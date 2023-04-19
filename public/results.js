@@ -78,7 +78,7 @@ function addElementFlightResult(flight){
     let buttonElement = document.createElement('button');
     buttonElement.className = "btn btn-primary bookFlight";
     buttonElement.innerHTML = "book the flight"
-    buttonElement.onclick = function (){$('#paymentModal').modal('show');};
+    buttonElement.onclick = function (){$('#paymentModal').modal('show'); $('#allFlightResult').modal('hide');};
 
     cardBody.appendChild(paragraphElement);
     cardBody.appendChild(buttonElement);
