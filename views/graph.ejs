@@ -50,7 +50,6 @@
             });
 
             function updateChart() {
-                console.log(chart)
                 var dps = chart.options.data[0].dataPoints;
                 chart.options.data[0].dataPoints = dps;
                 chart.render();
@@ -68,7 +67,6 @@
                     type: 'GET',
                     url: "/flight/getBestDes",
                 }).done(function (data) {
-                    console.log(data)
                     // Empty array to store flight airlines
                     let flightAirlines = new Map();
 
@@ -108,7 +106,6 @@
             });
 
             function updateChart1() {
-                console.log(chart1)
                 var dps1 = chart1.options.data[0].dataPoints;
                 chart1.options.data[0].dataPoints = dps1;
                 chart1.render();
