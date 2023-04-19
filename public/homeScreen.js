@@ -37,7 +37,7 @@ $('#logoutUser').click(function (e){
     e.preventDefault();
     window.location = '/logout'
 })
-var canvas = document.querySelector('canvas');
+var canvas = document.getElementById('canvas');
 var c = canvas.getContext('2d');
 
 canvas.width = window.innerWidth;
