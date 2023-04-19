@@ -84,20 +84,29 @@ $('#registerButton').click(function (e){
 
     if(email==null || email===""){
         $('#emailLabelRegister').show();
+        $('#emailLabelRegister')[0].innerHTML="Please Enter Your Email";
         valid=false;
     }
-    else
-        $('#emailLabelRegister').hide();
+    else {
+        if (!String(email).includes("@")) {
+            $('#emailLabelRegister')[0].innerHTML = "Email Invalid";
+            console.log("hello")
+            $('#emailLabelRegister').show();
+            valid = false;
+        } else {
+            $('#emailLabelRegister').hide();
+        }
+    }
 
     if(age==null || age===""){
         $('#ageLabelRegister').show();
-        $('#ageLabelRegister').innerHTML="Please Enter Your Age";
+        $('#ageLabelRegister')[0].innerHTML="Please Enter Your Age";
         valid=false;
     }
     else {
         if (age < 1 || age > 120) {
             $('#ageLabelRegister').show();
-            $('#ageLabelRegister').innerHTML = "Age Invalid, Must Be Between 1 To 120";
+            $('#ageLabelRegister')[0].innerHTML = "Age Invalid, Must Be Between 1 To 120";
             valid = false;
         }
         else
