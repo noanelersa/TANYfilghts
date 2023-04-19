@@ -49,11 +49,25 @@ const getFlightsByAirline = async (airlineName) =>{
     return await Flight.find({source: airlineName});
 }
 
+const changeAllFlight = async (oldAirport,newAirport) =>{
+    const flightsSource = await Flight.find({source: oldAirport})
+    const flightsDestination = await Flight.find({destination: oldAirport})
+    await flightsSource.forEach(function async (e) {
+        e.source = newAirport;
+        e.save();
+    });
+    await flightsDestination.forEach(function async (e) {
+        e.destination = newAirport;
+        e.save();
+    });
+}
+
 module.exports={
     createFlight,
     getFlightById,
     deleteFlight,
     getFlights,
     update,
-    getFlightsByAirline
+    getFlightsByAirline,
+    changeAllFlight
 };
