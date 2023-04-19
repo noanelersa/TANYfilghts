@@ -1,24 +1,34 @@
 try {
-    $('#createFlightBtn').click(function (e) {
-        e.preventDefault();
-        $('#CF').modal('show');
-    });
 
-    $('#updateFlightBtn').click(function (e) {
+    $('#deleteAirportBtnAdmin').click(function (e) {
         e.preventDefault();
-        updateAllFlight();
+        reloadAllAirportPageDelete();
     });
-
     $('#deleteFlightBtn').click(function (e) {
         e.preventDefault();
         reloadAllFlightPageDelete();
     });
+    $('#updateAirportBtnAdmin').click(function (e){
+        e.preventDefault();
+        updateAllAirport();
+    });
     $('#airportCreate').click(function (e){
         e.preventDefault();
-        $('#airportModalRegister').modal('show');
+        openCreateAirportMenu()
     });
+    $('#createAdminBtn').click(function (e){
+        e.preventDefault();
+        $('#adminCreateForm').modal('show');
+    });
+    $('#updateAdminBtn').click(function (e){
+        e.preventDefault();
+        updateFormUpdate(document.getElementById('usernameID').className);
+    })
 }
 catch (e) {}
+
+
+
 $('#logoutUser').click(function (e){
     e.preventDefault();
     window.location = '/logout'

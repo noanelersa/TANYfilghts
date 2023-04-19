@@ -5,7 +5,6 @@ const createAirport = async (name, password, state, published, owner, numOfTermi
     if((await getAirportByName(name))){
         return null;
     }
-    console.log((await getAirportByName(name)))
 
     const airport = new Airport({
         name: name,

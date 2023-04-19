@@ -16,7 +16,12 @@ const deleteFlight=async (req,res)=>{
 };
 
 const getFlights=async (req,res)=>{
-    const flights=await flightService.getFlights();
+    let flights
+    if(req.query.airlineName == null || req.query.airlineName === "null")
+        flights =await flightService.getFlights();
+    else{
+        flights =await flightService.getFlightsByAirline(req.query.airlineName);
+    }
     res.json(flights);
 };
 

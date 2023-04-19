@@ -5,6 +5,7 @@ const landTimeUpdate = $('#landTimeFlightUpdate')[0];
 const sourceUpdate = $('#sourceFlightUpdate')[0];
 const destinationUpdate = $('#destinationFlightUpdate')[0];
 const idFlight = $('#flightID')[0];
+let airlineNameUpdateFlight;
 
 function resetUpdatePage() {
     while(document.getElementById('modalBodyUpdate').hasChildNodes()){
@@ -16,11 +17,18 @@ function resetUpdatePage() {
     document.getElementById("modalBodyUpdate").appendChild(row);
     cardsUpdate = 0;
 }
-
-function updateAllFlight(){
+function setFlightStateUpdate(airportName){
+    sourceUpdate.value = airportName;
+    sourceUpdate.hidden = true;
+    $('#brNameUpdate').show();
+    $('#nameAirportStateUpdateFlight')[0].innerHTML = airportName;
+    $('#nameAirportStateUpdateFlight').show();
+}
+function updateAllFlight(airlineName){
+    airlineNameUpdateFlight = airlineName;
     $.ajax({
         type: 'GET',
-        url: "/flight/allFlights",
+        url: "/flight/allFlights?airlineName=" + airlineNameUpdateFlight,
     }).done(function (data){
         resetUpdatePage()
         data.forEach((data) => {addElementFlightUpdate(data)});
@@ -42,6 +50,9 @@ function updateForm(id,airline,flightTime,land,source,des) {
     const flightId = $('#flightID')[0]
     flightId.hide = true;
     flightId.className = "" + id;
+    if(airlineNameUpdateFlight){
+        setFlightStateUpdate(airlineNameUpdateFlight);
+    }
     $('#UF').modal('show');
 }
 
@@ -148,7 +159,7 @@ $('#submitUpdate').click(function(e){
         success: function (){
             $('#allFlightUpdate').modal('hide');
             $('#UF').modal('hide');
-            updateAllFlight();
+            updateAllFlight(airlineNameUpdateFlight);
         },
         error: function (){alert("error")}
     });

@@ -45,10 +45,15 @@ const update = async(airlineName,flightTime,landTime,source,destination,id)=>{
     return await flight.save();
 };
 
+const getFlightsByAirline = async (airlineName) =>{
+    return await Flight.find({source: airlineName});
+}
+
 module.exports={
     createFlight,
     getFlightById,
     deleteFlight,
     getFlights,
-    update
+    update,
+    getFlightsByAirline
 };

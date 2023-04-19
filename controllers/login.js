@@ -17,7 +17,7 @@ async function login(req, res) {
   const { username, password } = req.body
   const result = await loginService.login(username, password)
   if (result) {
-    req.session.username = String(username).includes("Airport-") ? username.substring(8) : username;
+    req.session.username = String(username).includes("Airport-") ? username.substring(8) : String(username).includes("Admin-") ? username.substring(6) : username;
     req.session.userType = result;
     res.redirect('/');
   }

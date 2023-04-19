@@ -25,6 +25,7 @@ app.use("/",require("./routes/login"));
 app.use('/flight', require('./routes/flight'));
 app.use("/user",require("./routes/user"));
 app.use("/airport",require("./routes/airport"));
+app.use("/admin",require("./routes/admin"));
 app.use(express.static("public"));
 app.use(express.static("img"));
 

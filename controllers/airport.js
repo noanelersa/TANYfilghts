@@ -13,12 +13,14 @@ const createAirport = async (req, res)=>{
     res.json(airport);
 };
 const updateAirport = async (req , res)=>{
-    if(await getAirportByName(req.body.name) && req.body.name !== req.session.username){console.log(req.session.username + " " + req.body.name);return res.status(404).json({errors:["name already exist"]});}
-    const airport= await airportService.updateAirport(req.session.username,req.body.name, req.body.password ,req.body.state,req.body.published, req.body.owner , req.body.numOfTerminals);
+    if(await getAirportByName(req.body.name) && req.body.name !== req.body.oldname){return res.status(404).json({errors:["name already exist"]});}
+    const airport= await airportService.updateAirport(req.body.oldname,req.body.name, req.body.password ,req.body.state,req.body.published, req.body.owner , req.body.numOfTerminals);
     if(!airport){
         return res.status(404).json({errors:["name already exist"]});
     }
-    req.session.username = req.body.name;
+    if(req.session.userType === 'airport'){
+        req.session.username = req.body.name;
+    }
     res.json(airport);
 };
 

@@ -29,7 +29,6 @@
                  <button type="button" class="btn btn-light" id="updateUserButton">Update User</button>
                  <button type="button" class="btn btn-light" id="logoutUser">Logout</button>
                 <span class="nav-item rand">
-                  <a class="nav-link header_feature big" href="#"><i class="bi bi-person-circle"></i></a>
                 </span>
                 <a>
                   <img class="img" src="Tanylogo (1).png">
@@ -89,13 +88,22 @@
     <button class="create" id="createFlightBtn">create flight</button>
     <button class="update" id="updateFlightBtn">update flight</button>
     <button class="delete" id="deleteFlightBtn">delete flight</button>
-    <button class="update" id="updateAirportBtn">update airport</button>
-    <button class="update" id="deleteAirportBtn">delete airport</button>
+
   <%}%>
+
+  <%if(userType === 'airport') {%>
+      <button class="update" id="updateAirportBtnAirport">update airport</button>
+      <button class="delete" id="deleteAirportBtnAirport">delete airport</button>
+  <%}%>
+
   <%if(userType === "admin") {%>
+      <button class="delete" id="deleteAirportBtnAdmin">delete airport</button>
+      <button class="update" id="updateAirportBtnAdmin">update airport</button>
       <button class="create" id="airportCreate">create airport</button>
+      <button class="update" id="createAdminBtn">create admin</button>
+      <button class="update" id="updateAdminBtn">update admin</button>
   <%}%>
-    <div>
+  <div>
     <div class="container text-center">
         <h1 style="text-align: left;">CHEAPEST FLIGHTS</h1>
         <div class="row">
@@ -183,6 +191,8 @@
         </div>
       </div>
   </div>
+  <br>
+  <br>
     <div style="text-align: center;">
     <video controls>
         <source src="logo video.mp4" type="video/mp4">
@@ -459,6 +469,10 @@
     <%- include('updateUser', {}); %>
     <%- include('createAirport', {}); %>
     <%- include('updateAirport', {}); %>
+    <%- include('createAdmin', {}); %>
+    <%- include('updateAdmin', {}); %>
+    <%- include('updateAirportAdmin', {}); %>
+    <%- include('deleteAirportAdmin', {}); %>
 
     <script>
         $('#updateUserButton').click(function (){
@@ -468,10 +482,30 @@
             deleteUser("<%=username%>");
         })
         if("<%=userType%>" === 'airport' || "<%=userType%>" === 'admin'){
-            $('#updateAirportBtn').click(function (e){
+            $('#updateAirportBtnAirport').click(function (e){
                 e.preventDefault();
                 updateAirportMenu("<%=username%>")
             })
+        }
+        if("<%=userType%>" === 'airport'){
+            $('#createFlightBtn').click(function (e) {
+                e.preventDefault();
+                OpenCreateFlightMenu("<%=username%>")
+            });
+            $('#updateFlightBtn').click(function (e) {
+                e.preventDefault();
+                updateAllFlight("<%=username%>");
+            });
+        }
+        if("<%=userType%>" === 'admin'){
+            $('#createFlightBtn').click(function (e) {
+                e.preventDefault();
+                OpenCreateFlightMenu(null)
+            });
+            $('#updateFlightBtn').click(function (e) {
+                e.preventDefault();
+                updateAllFlight(null);
+            });
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
