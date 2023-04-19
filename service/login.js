@@ -1,8 +1,15 @@
 const User = require("../models/User");
+const Airport = require("../service/airport");
 
 async function login(username, password) {
+    if(String(username).includes("Airport-")){
+        username = username.substring(8);
+        const user = await Airport.getAirportByUserAndPass(username,password)
+        return user != null ? "airport" : null;
+    }
     const user = await User.findOne({ username: username, password });
-    return user != null
+
+    return user != null ? "user" : null;
 }
 
 async function register(username, password, email,firstname,lastname,age) {
