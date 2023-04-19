@@ -28,6 +28,19 @@ $('#createFlightBtn').click(function (e){
         e.preventDefault();
         updateFormUpdate(document.getElementById('usernameID').className);
     })
+    function openPopup(){
+        const popup = document.getElementById("popup");
+        return popup.classList.add("open-popup");
+    }
+    function closePopup(){
+        const popup = document.getElementById("popup");
+        $('#paymentModal').modal('hide')
+        return popup.classList.remove("open-popup");
+    }
+
+    document.getElementById("openBtn").addEventListener("click",()=>{openPopup()});
+    document.getElementById("closeBtn").addEventListener("click",()=>{closePopup()});
+
 }
 catch (e) {}
 

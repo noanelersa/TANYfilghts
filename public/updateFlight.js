@@ -179,6 +179,7 @@ $('#submitUpdate').click(function(e){
             $('#UF').modal('hide');
             updateAllFlight(airlineNameUpdateFlight);
             updateGraphOne();
+            updateGraphTwo();
         },
         error: function (){alert("error")}
     });

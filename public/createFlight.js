@@ -73,6 +73,7 @@ $('#submitCreate').click(function (e){
             destinationCreate.value="";
             priceCreate.value="";
             updateGraphOne();
+            updateGraphTwo();
         },
         error: function (){alert("error")}
     });

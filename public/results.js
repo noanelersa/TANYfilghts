@@ -76,9 +76,9 @@ function addElementFlightResult(flight){
     paragraphElement.innerHTML = "airline: " + flight.airlineName + "<br>" + "from: " + flight.source + "<br>" + "to: " + flight.destination + "<br>" + "date: " + finalDate+"<br>"+"flight time: "+finalHour+"<br>"+"price: "+flight.price;
 
     let buttonElement = document.createElement('button');
-    buttonElement.className = "btn btn-primary";
+    buttonElement.className = "btn btn-primary bookFlight";
     buttonElement.innerHTML = "book the flight"
-
+    buttonElement.onclick = function (){$('#paymentModal').modal('show');};
 
     cardBody.appendChild(paragraphElement);
     cardBody.appendChild(buttonElement);
@@ -119,7 +119,9 @@ inputPrice.forEach(input =>{
         }
     })
 })
-
+$('.bookFlight').click(function (e) {
+        $('#paymentModal').modal('show');
+    });
 inputRange.forEach(input =>{
     input.addEventListener("input",(e)=>{
         let minVal = parseInt(inputRange[0].value);

@@ -29,6 +29,7 @@ function deleteForm(id) {
         success: function (){
             reloadAllFlightPageDelete();
             updateGraphOne();
+            updateGraphTwo();
         },
         error: function (){alert("error")}
     });
