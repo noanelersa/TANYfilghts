@@ -119,5 +119,6 @@ function checkValidCreate() {
     else{
         setOk(priceCreate);
     }
+
     return true;
 }

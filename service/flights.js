@@ -52,9 +52,9 @@ const update = async(airlineName,flightTime,landTime,source,destination,price,id
     return await flight.save();
 };
 
-const searchSpesicFlight = async(flightTime, landTime, source, destination,price)=>{
+const searchSpesicFlight = async(flightTime, landTime, source, destination)=>{
     flightTime = flightTime + "T00:00:00.000Z";
-    landTime = landTime + "T00:00:00.000Z";
+    landTime = landTime + "T23:59:59.000Z";
     return await (Flight.find({
         source: source,
         destination: destination,
@@ -62,6 +62,20 @@ const searchSpesicFlight = async(flightTime, landTime, source, destination,price
         landTime: {$lt: landTime}
     }));
 };
+
+const searchMoreSpecificFlight=async (flightTime, landTime, source, destination,priceMin,priceMax,airlineName)=>{
+    flightTime = flightTime + "T00:00:00.000Z";
+    landTime = landTime + "T23:59:59.000Z";
+    return await (Flight.find({
+        source: source,
+        destination: destination,
+        flightTime: {$gt: flightTime},
+        landTime: {$lt: landTime},
+        price:{$gt:priceMin},
+        price:{$lt:priceMax},
+        airlineName:airlineName
+    }));
+}
 
 const getPopularDes = async () =>{
     return await Flight.aggregate( [
@@ -81,5 +95,6 @@ module.exports={
     getFlights,
     update,
     searchSpesicFlight,
-    getPopularDes
+    getPopularDes,
+    searchMoreSpecificFlight
 };

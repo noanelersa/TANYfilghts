@@ -49,13 +49,27 @@ const searchSpesicFlight=async (req,res)=>{
     const source=req.query.source;
     const destination=req.query.destination;
     const price=req.query.price;
-    const value=await flightService.searchSpesicFlight(flightTime, landTime, source, destination,price);
-    res.json(value);
+
+        const value=await flightService.searchSpesicFlight(flightTime, landTime, source, destination,price);
+        res.json(value);
 }
 
 const getPopularDes = async (req,res) => {
     const something = await flightService.getPopularDes();
     res.json(something)
+}
+
+const searchMoreSpecificFlight=async(req,res)=>{
+    const flightTime=req.query.flightTime;
+    const landTime=req.query.landTime;
+    const source=req.query.source;
+    const destination=req.query.destination;
+    const priceMin=req.query.priceMin;
+    const priceMax=req.query.priceMax;
+    const airlineName=req.query.airlineName;
+
+    const value=await flightService.searchMoreSpecificFlight(flightTime, landTime, source, destination,priceMin,priceMax,airlineName);
+    res.json(value);
 }
 
 module.exports={
@@ -68,5 +82,6 @@ module.exports={
     getCreatePage,
     getDeletePage,
     searchSpesicFlight,
+    searchMoreSpecificFlight,
     getPopularDes
 };

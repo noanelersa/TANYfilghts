@@ -4,11 +4,10 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const homePage = require('./routes/homePage');
 const newLocal = require('custom-env');
-newLocal.env(process.env.NODE_ENV, './config');
 
-mongoose.connect(process.env.CONNECTION_STRING, 
-                {   useNewUrlParser: true, 
-                    useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://alicemager006:k8SQCfD1JAibNFNE@cluster0.t3ryxdl.mongodb.net/?retryWrites=true&w=majority",
+    {useNewUrlParser: true,
+        useUnifiedTopology: true });
 
 const app = express();
 app.use(cors());
@@ -26,6 +25,20 @@ app.use("/",require("./routes/login"));
 app.use("/user",require("./routes/user"));
 app.use(express.static("public"));
 app.use(express.static("img"));
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
 
+io.on('connection', (socket) => {
+    socket.broadcast.emit('joined', '');
 
-app.listen(process.env.PORT);
+    socket.on('disconnect', () => {
+        socket.broadcast.emit('disconnected', '');
+    });
+
+    socket.on('new message', (data) => {
+        const { username, message } = data;
+        io.emit('new message', { username, message });
+    });
+});
+
+http.listen(8081)

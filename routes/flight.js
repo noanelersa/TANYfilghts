@@ -18,6 +18,9 @@ router.route('/update')
 router.route('/searchSpesicFlight')
     .get(flightController.searchSpesicFlight)
 
+router.route('/searchMoreSpecificFlight')
+    .get(flightController.searchMoreSpecificFlight)
+
 router.route('/:id')
     .get(flightController.getFlightById)
 
