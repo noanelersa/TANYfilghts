@@ -10,7 +10,4 @@ router.route('/')
     .get(homeController.getArticle)
     .put(homeController.updateArticle)
     .delete(homeController.deleteArticle);*/
-
-router.route('test').get(airportController.getHomePage)// what here
-router.route('test').get(clientController.getHomePage)
 module.exports = router;

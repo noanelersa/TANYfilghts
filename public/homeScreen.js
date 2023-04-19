@@ -1,7 +1,42 @@
+try {
 $('#createFlightBtn').click(function (e){
     e.preventDefault();
     $('#CF').modal('show');
 });
+
+    $('#deleteAirportBtnAdmin').click(function (e) {
+        e.preventDefault();
+        reloadAllAirportPageDelete();
+    });
+    $('#deleteFlightBtn').click(function (e) {
+        e.preventDefault();
+        reloadAllFlightPageDelete();
+    });
+    $('#updateAirportBtnAdmin').click(function (e){
+        e.preventDefault();
+        updateAllAirport();
+    });
+    $('#airportCreate').click(function (e){
+        e.preventDefault();
+        openCreateAirportMenu()
+    });
+    $('#createAdminBtn').click(function (e){
+        e.preventDefault();
+        $('#adminCreateForm').modal('show');
+    });
+    $('#updateAdminBtn').click(function (e){
+        e.preventDefault();
+        updateFormUpdate(document.getElementById('usernameID').className);
+    })
+}
+catch (e) {}
+
+
+
+$('#logoutUser').click(function (e){
+    e.preventDefault();
+    window.location = '/logout'
+})
 var canvas = document.querySelector('canvas');
 var c = canvas.getContext('2d');
 
@@ -16,15 +51,6 @@ var airplaneWidth = c.measureText(airplane).width;
 var yMin = 50;
 var yMax = innerHeight - yMin;
 
-$('#updateFlightBtn').click(function (e){
-    e.preventDefault();
-    updateAllFlight();
-});
-
-$('#deleteFlightBtn').click(function (e){
-    e.preventDefault();
-    reloadAllFlightPageDelete();
-});
 var y = Math.floor(Math.random() * (yMax - yMin)) + yMin;
 
 //var randomnumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;

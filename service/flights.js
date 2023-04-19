@@ -52,6 +52,23 @@ const update = async(airlineName,flightTime,landTime,source,destination,price,id
     return await flight.save();
 };
 
+const getFlightsByAirline = async (airlineName) =>{
+    return await Flight.find({source: airlineName});
+}
+
+const changeAllFlight = async (oldAirport,newAirport) =>{
+    const flightsSource = await Flight.find({source: oldAirport})
+    const flightsDestination = await Flight.find({destination: oldAirport})
+    await flightsSource.forEach(function async (e) {
+        e.source = newAirport;
+        e.save();
+    });
+    await flightsDestination.forEach(function async (e) {
+        e.destination = newAirport;
+        e.save();
+    });
+}
+
 const searchSpesicFlight = async(flightTime, landTime, source, destination)=>{
     flightTime = flightTime + "T00:00:00.000Z";
     landTime = landTime + "T23:59:59.000Z";
@@ -96,5 +113,7 @@ module.exports={
     update,
     searchSpesicFlight,
     getPopularDes,
-    searchMoreSpecificFlight
+    searchMoreSpecificFlight,
+    getFlightsByAirline,
+    changeAllFlight
 };

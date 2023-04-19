@@ -1,9 +1,10 @@
 const loginService = require("../service/login")
+const userService = require('../service/user')
 
 
 
 function renderHomePage(req, res) {  
-  res.render("homeScreen", {username: req.session.username})
+  res.render("homeScreen", {username: req.session.username, userType: req.session.userType})
 }
 
 function logout(req, res) {
@@ -14,11 +15,11 @@ function logout(req, res) {
 
 async function login(req, res) {
   const { username, password } = req.body
-
   const result = await loginService.login(username, password)
   if (result) {
-    req.session.username = username
-    res.redirect('/')
+    req.session.username = String(username).includes("Airport-") ? username.substring(8) : String(username).includes("Admin-") ? username.substring(6) : username;
+    req.session.userType = result;
+    res.redirect('/');
   }
   else
   return res.status(404).json({errors:['Username Not Found, Sign Up']})

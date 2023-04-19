@@ -1,30 +1,3 @@
-let today = new Date();
-let dd = today.getDate();
-let mm = today.getMonth() + 1; //January is 0!
-let hour = today.getHours();
-let minutes = today.getMinutes();
-const yyyy = today.getFullYear();
-
-if (dd < 10) {
-    dd = '0' + dd;
-}
-
-if (mm < 10) {
-    mm = '0' + mm;
-}
-
-if (hour < 10) {
-    hour = '0' + hour;
-}
-
-if (minutes < 10) {
-    minutes = '0' + minutes;
-}
-
-today = yyyy + '-' + mm + '-' + dd + "T" + hour + ":" + minutes;
-document.getElementById("flightTimeCreate").setAttribute("min", today);
-document.getElementById("landTimeFlightCreate").setAttribute("min", today);
-
 
 
 const airlineCreate = $('#airlineNameCreate')[0];
@@ -33,8 +6,50 @@ const landTimeCreate = $('#landTimeFlightCreate')[0];
 const sourceCreate = $('#sourceFlightCreate')[0];
 const destinationCreate = $('#destinationFlightCreate')[0];
 const priceCreate= $('#priceFlightCreate')[0];
+$('#nameAirportStateRegisterFlight').hide();
+sourceCreate.hidden = false;
+$('#brNameCreate').hide();
+function OpenCreateFlightMenu(airlineName){
+    let today = new Date();
+    let dd = today.getDate();
+    let mm = today.getMonth() + 1; //January is 0!
+    let hour = today.getHours();
+    let minutes = today.getMinutes();
+    const yyyy = today.getFullYear();
+
+    if (dd < 10) {
+        dd = '0' + dd;
+    }
+
+    if (mm < 10) {
+        mm = '0' + mm;
+    }
+
+    if (hour < 10) {
+        hour = '0' + hour;
+    }
+
+    if (minutes < 10) {
+        minutes = '0' + minutes;
+    }
+
+    today = yyyy + '-' + mm + '-' + dd + "T" + hour + ":" + minutes;
+    document.getElementById("flightTimeCreate").setAttribute("min", today);
+    document.getElementById("landTimeFlightCreate").setAttribute("min", today);
+    if(airlineName){
+        setFlightStateCreate(airlineName);
+    }
+    $('#CF').modal('show');
+}
 
 
+function setFlightStateCreate(airportName){
+    sourceCreate.value = airportName;
+    sourceCreate.hidden = true;
+    $('#brNameCreate').show();
+    $('#nameAirportStateRegisterFlight')[0].innerHTML = airportName;
+    $('#nameAirportStateRegisterFlight').show();
+}
 $('#submitCreate').click(function (e){
     e.preventDefault();
     if(!checkValidCreate()){return;}

@@ -19,10 +19,11 @@
                             data-bs-dismiss="modal">
                     </button>
                 </div>
+
                 <div class="modal-body">
                     <form class="row g-3">
                         <div class="col-md-3">
-                            <label for="airlineNameCreate" class="form-label">Choose an airline
+                            <label for="airlineNameCreate" class="form-label" id="airlineNameCreateLabel">Choose an airline
                                 <span style="color: red;">*</span>
                             </label>
                             <input type="text" class="form-control" id="airlineNameCreate" maxlength="10" required>
@@ -43,6 +44,8 @@
                             <label for="sourceFlightCreate" class="form-label">Choose a source
                                 <span style="color: red;">*</span>
                             </label>
+                            <br id="brNameCreate">
+                            <span id="nameAirportStateRegisterFlight" style="font-size: large"></span>
                             <input type="text" class="form-control" id="sourceFlightCreate" maxlength="20" required>
                         </div>
                         <div class="col-md-3">

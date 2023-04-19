@@ -13,7 +13,7 @@ function userUpdateMenu(username){
     let user ;
     $.ajax({
         type: 'GET' ,
-        url: 'user/getuser?username='+ username
+        url: 'user/getUser?username='+ username
     }).done(function (data){
         user = data;
         usernameUpdate.value= user.username;

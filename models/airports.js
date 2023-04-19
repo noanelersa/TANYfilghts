@@ -21,6 +21,10 @@ const airport = new Schema({
     numOfTerminals:{
         type: Number,
         default: 1
+    },
+    password:{
+        type: String,
+        required: true
     }
 
 
