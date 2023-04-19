@@ -8,7 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="homeScreenStyle.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="popup.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   </head>
 
 
@@ -123,6 +127,7 @@
                   <button class="create" type="submit" id="searchFlightBtn">Search Flights</button>
                 </div>
               </div>
+              </div>
             </div>
           </div>
       </div>
@@ -135,81 +140,33 @@
         <div class="row">
           <div class="col">
             <div class="card1" style="width: 18rem;">
-                <input type="image" src="https://i.pinimg.com/564x/29/f9/82/29f982016969783338b0839d9a54647b.jpg"  class="card1img" data-bs-toggle="modal" data-bs-target="#staticBackdrop" alt="...">
+                <input type="image" src="https://i.pinimg.com/564x/29/f9/82/29f982016969783338b0839d9a54647b.jpg"  class="card1img" data-bs-toggle="modal" data-bs-target="#newYorkModal" alt="...">
                 <div class="card-body">
                   <h5 class="card-title tlt1">NEW YORK</h5>
                     
-                    <!-- Modal -->
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Romania → New York</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Take the deal</button>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
+
+
                 </div>
             </div>
           </div>
           <div class="col">
             <div class="card1" style="width: 18rem;">
-                <input type="image" src="https://i.pinimg.com/564x/85/db/36/85db36405ff2a7a575e88e359aaec674.jpg"  class="card1img" data-bs-toggle="modal" data-bs-target="#staticBackdrop1" alt="...">
+                <input type="image" src="https://i.pinimg.com/564x/85/db/36/85db36405ff2a7a575e88e359aaec674.jpg"  class="card1img" data-bs-toggle="modal" data-bs-target="#ParisModal" alt="...">
                 <div class="card-body">
                   <h5 class="card-title  tlt2">PARIS</h5>
 
-                     <!-- Modal -->
-                     <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Israel → Paris</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                            ...
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Take the deal</button>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
           </div>
           <div class="col">
             <div class="card1" style="width: 18rem;">
-                <input type="image" src="https://i.pinimg.com/564x/4c/5d/36/4c5d363d3be216141df83b36fea6a3a1.jpg"  class="card1img" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" alt="...">
+                <input type="image" src="https://i.pinimg.com/564x/4c/5d/36/4c5d363d3be216141df83b36fea6a3a1.jpg" class="card1img" data-bs-toggle="modal" data-bs-target="#londonModal" alt="...">
                 <div class="card-body">
                   <h5 class="card-title  tlt3">LONDON</h5>
 
-                     <!-- Modal -->
-                     <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Itay → London</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                            ...
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Take the deal</button>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
+
+
                 </div>
               </div>
         
@@ -282,17 +239,310 @@
             </div>
           </div>
     </footer>
+  <!-- Modal -->
+  <!-- Modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="ParisModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Israel → Paris  ONLY 89$</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <aside>
+                      <h4>DETAILS:</h4>
+                      <p>Airline: WIZZER <br>
+                          Date: 15.01.2024-25.01.2024</p>
+                  </aside>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" id="myButtonParis" class="btn btn-primary">Take the deal</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="paymentModalParis" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  ..
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="modal fade" id="newYorkModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Romania → New York  ONLY 199$</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <aside>
+                      <h4>DETAILS:</h4>
+                      <p>Airline: RYNAR <br>
+                          Date: 27.09.2023-10.10.2023</p>
+                  </aside>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" id="myButtonNewYork" class="btn btn-primary">Take the deal</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="paymentModalNewYork" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  ...
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="modal fade" id="londonModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Italy → London  ONLY 99$</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <aside>
+                      <h4>DETAILS:</h4>
+                      <p>Airline: EL AL <br>
+                          Date: 20.06.2023-26.06.2023</p>
+                  </aside>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" id="myButtonLondon" class="btn btn-primary">Take the deal</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">PAYMENT</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <div class="containerPayment">
+                      <link rel="stylesheet" href="style.css">
+
+                      <form action="">
+
+                          <div class="row">
+
+                              <div class="col">
+
+                                  <h3 class="title">billing address</h3>
+
+                                  <div class="inputBox">
+                                      <span>full name :</span>
+                                      <input type="text" placeholder="Your name">
+                                  </div>
+                                  <div class="inputBox">
+                                      <span>email :</span>
+                                      <input type="email" placeholder="example@example.com">
+                                  </div>
+                                  <div class="inputBox">
+                                      <span>address :</span>
+                                      <input type="text" placeholder="room - street - locality">
+                                  </div>
+                                  <div class="inputBox">
+                                      <span>city :</span>
+                                      <input type="text" placeholder="Your city">
+                                  </div>
+
+                                  <div class="flex">
+                                      <div class="inputBox">
+                                          <span>state :</span>
+                                          <input type="text" placeholder="Your state">
+                                      </div>
+                                      <div class="inputBox">
+                                          <span>zip code :</span>
+                                          <input type="text" placeholder="123 456">
+                                      </div>
+                                  </div>
+
+                              </div>
+
+                              <div class="col">
+
+                                  <h3 class="title">payment</h3>
+
+                                  <div class="inputBox">
+                                      <span>cards accepted :</span>
+                                      <img src="card_img.png" alt="">
+                                  </div>
+                                  <div class="inputBox">
+                                      <span>name on card :</span>
+                                      <input type="text" placeholder="Your name">
+                                  </div>
+                                  <div class="inputBox">
+                                      <span>credit card number :</span>
+                                      <input type="number" placeholder="1111-2222-3333-4444">
+                                  </div>
+                                  <div class="inputBox">
+                                      <span>exp month :</span>
+                                      <input type="text" placeholder="April">
+                                  </div>
+
+                                  <div class="flex">
+                                      <div class="inputBox">
+                                          <span>exp year :</span>
+                                          <input type="number" placeholder="2023">
+                                      </div>
+                                      <div class="inputBox">
+                                          <span>CVV :</span>
+                                          <input type="text" placeholder="1234">
+                                      </div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+                      </form>
+                  </div>
+                  <input type="submit" value="proceed to checkout" class="submit-btn">
+                  <div class="modal-footer modal-backdrop.in">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <div class="container">
+                          <button class="btn" id="openBtn" onclick="openPopup()">Submit</button>
+                          <div class="popup" id="popup">
+                              <img src="tick.png">
+                              <h2>Thank You!</h2>
+                              <p>
+                                  Your payment details has been successfully
+                                  sumbitted. Thanks!
+                              </p>
+                              <button class ="backgroundColorOfOk" id="closeBtn" onclick="closePopup() ">OK</button>
+                          </div>
+                      </div>
+                      <script src="popup.js"></script>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-dialog modal-dialog-scrollable modal-xl">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="exampleModalLabel">About Us</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-              בלה בלה בלה בלה
+            <div class="modal-body" style="max-width: 100%">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card h-200">
+                            <div class="card-img-container">
+                                <img class="card-img" src="taliaStudentCard.jpg" alt="Talia">
+                            </div>
+                            <div class="card-text-container">
+                                <h5 class="card-title">Talia</h5>
+                                <p class="card-text">
+
+                                    Age: 17
+                                    <br>
+                                    Education: A computer science student at the College of Management
+                                    <br>
+                                    detail
+                                    <br>
+                                    detail
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-img-container">
+                                <img class="card-img" src="aliceStudentCard.jpg" alt="Alice">
+                            </div>
+                            <div class="card-text-container">
+                                <h5 class="card-title">Alice</h5>
+                                <p class="card-text">
+                                    Age: 16
+                                    <br>
+                                    Education: A computer science student at the College of Management
+                                    <br>
+                                    detail
+                                    <br>
+                                    detail
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-img-container">
+                                <img class="card-img" src="noaStudentCard.jpg" alt="Noa">
+                            </div>
+                            <div class="card-text-container">
+                                <h5 class="card-title">Noa</h5>
+                                <p class="card-text">
+                                    Age: 16
+                                    <br>
+                                    Education: A computer science student at the College of Management
+                                    <br>
+                                    detail
+                                    <br>
+                                    detail
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-img-container">
+                                <img class="card-img" src="yaelStudentCard.jpg" alt="Yael">
+                            </div>
+                            <div class="card-text-container">
+                                <h5 class="card-title">Yael</h5>
+                                <p class="card-text">
+                                    Age: 16
+                                    <br>
+                                    Education: A computer science student at the College of Management
+                                    <br>
+                                    detail
+                                    <br>
+                                    detail
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -548,8 +798,11 @@
             });
         }
     </script>
+  <button id="myButton">Click me</button>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="/homeScreen.js"></script>
   </body>
 </html>
