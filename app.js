@@ -7,7 +7,7 @@ const newLocal = require('custom-env');
 
 mongoose.connect("mongodb+srv://alicemager006:k8SQCfD1JAibNFNE@cluster0.t3ryxdl.mongodb.net/?retryWrites=true&w=majority",
     {useNewUrlParser: true,
-                useUnifiedTopology: true });
+        useUnifiedTopology: true });
 
 const app = express();
 app.use(cors());
@@ -40,3 +40,5 @@ io.on('connection', (socket) => {
         io.emit('new message', { username, message });
     });
 });
+
+http.listen(8081)

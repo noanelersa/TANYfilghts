@@ -46,7 +46,7 @@ $('#submitCreate').click(function (e){
             landTime: landTimeCreate.value,
             source: sourceCreate.value,
             destination: destinationCreate.value,
-            price:priceCreate.value
+            price:priceCreate.value,
         },
         success: function (){
             $('#CF').modal('hide');
@@ -111,5 +111,6 @@ function checkValidCreate() {
     else{
         setOk(priceCreate);
     }
+
     return true;
 }

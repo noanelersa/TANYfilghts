@@ -54,6 +54,19 @@ const searchSpesicFlight=async (req,res)=>{
         res.json(value);
 }
 
+const searchMoreSpecificFlight=async(req,res)=>{
+    const flightTime=req.query.flightTime;
+    const landTime=req.query.landTime;
+    const source=req.query.source;
+    const destination=req.query.destination;
+    const priceMin=req.query.priceMin;
+    const priceMax=req.query.priceMax;
+    const airlineName=req.query.airlineName;
+
+    const value=await flightService.searchMoreSpecificFlight(flightTime, landTime, source, destination,priceMin,priceMax,airlineName);
+    res.json(value);
+}
+
 module.exports={
     createFlight,
     deleteFlight,
@@ -63,5 +76,6 @@ module.exports={
     getFlightById,
     getCreatePage,
     getDeletePage,
-    searchSpesicFlight
+    searchSpesicFlight,
+    searchMoreSpecificFlight
 };
