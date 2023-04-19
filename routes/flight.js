@@ -14,7 +14,11 @@ router.route('/delete')
 router.route('/update')
     .post(flightController.updateFlight)
 
+router.route('/searchSpesicFlight')
+    .get(flightController.searchSpesicFlight)
+
 router.route('/:id')
     .get(flightController.getFlightById)
+
 
 module.exports = router;

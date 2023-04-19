@@ -50,7 +50,7 @@ function addElementFlightDelete(flight){
 
     let paragraphElement = document.createElement('p');
     paragraphElement.className = "card-text"
-    paragraphElement.innerHTML = "airline: " + flight.airlineName + "<br>" + "from: " + flight.source + "<br>" + "to: " + flight.destination + "<br>" + "date: " + finalDate;
+    paragraphElement.innerHTML = "airline: " + flight.airlineName + "<br>" + "from: " + flight.source + "<br>" + "to: " + flight.destination + "<br>" + "date: " + finalDate+"<br>"+"price: "+flight.price;
 
     let buttonElement = document.createElement('button');
     buttonElement.className = "btn btn-primary";

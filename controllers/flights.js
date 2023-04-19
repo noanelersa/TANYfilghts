@@ -2,7 +2,7 @@
 const flightService = require('../service/flights');
 //airlineName,flightTime,landTime,source,destination
 const createFlight=async (req,res)=>{
-    const flight = await flightService.createFlight(req.body.airlineName,req.body.flightTime,req.body.landTime,req.body.source,req.body.destination);
+    const flight = await flightService.createFlight(req.body.airlineName,req.body.flightTime,req.body.landTime,req.body.source,req.body.destination,req.body.price);
     if (!flight){
         return res.status(404).json({errors: ['can`t create flight']})
     }
@@ -26,7 +26,7 @@ const getFlightById = async (req,res) => {
 }
 
 const updateFlight=async(req,res)=>{
-    const flight=await flightService.update(req.body.airlineName,req.body.flightTime,req.body.landTime,req.body.source,req.body.destination,req.query.id);
+    const flight=await flightService.update(req.body.airlineName,req.body.flightTime,req.body.landTime,req.body.source,req.body.destination,req.body.price,req.query.id);
     if(!flight){return res.status(404).json({ errors: ['Flight not found'] });}
     res.json(flight);
 };
@@ -43,6 +43,17 @@ const getDeletePage=async(req,res)=>{
     res.render("../views/deleteFlight.ejs")
 }
 
+const searchSpesicFlight=async (req,res)=>{
+    const flightTime=req.query.flightTime;
+    const landTime=req.query.landTime;
+    const source=req.query.source;
+    const destination=req.query.destination;
+    const price=req.query.price;
+
+        const value=await flightService.searchSpesicFlight(flightTime, landTime, source, destination,price);
+        res.json(value);
+}
+
 module.exports={
     createFlight,
     deleteFlight,
@@ -51,5 +62,6 @@ module.exports={
     getUpdatePage,
     getFlightById,
     getCreatePage,
-    getDeletePage
+    getDeletePage,
+    searchSpesicFlight
 };

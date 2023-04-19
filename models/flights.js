@@ -22,6 +22,10 @@ const flight=new Schema({
     destination:{
         type:String,
         required:true
+    },
+    price:{
+        type:Number,
+        required:true
     }
 });
 
