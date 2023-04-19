@@ -11,7 +11,7 @@ const createFlight = async(airlineName,flightTime,landTime,source,destination,pr
         destination:destination,
         flightTime: flightTime,
         landTime: landTime,
-        price:price
+        price:price,
     });
     return await flight.save();
 };
@@ -63,11 +63,23 @@ const searchSpesicFlight = async(flightTime, landTime, source, destination,price
     }));
 };
 
+const getPopularDes = async () =>{
+    return await Flight.aggregate( [
+        {
+            $group: {
+                _id: {destination: "$destination"},
+                count: { $count: { } }
+            }
+        }
+    ] )
+}
+
 module.exports={
     createFlight,
     getFlightById,
     deleteFlight,
     getFlights,
     update,
-    searchSpesicFlight
+    searchSpesicFlight,
+    getPopularDes
 };

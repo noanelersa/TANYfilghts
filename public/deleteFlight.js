@@ -28,6 +28,7 @@ function deleteForm(id) {
         url: "/flight/delete?id=" + id,
         success: function (){
             reloadAllFlightPageDelete();
+            updateGraphOne();
         },
         error: function (){alert("error")}
     });

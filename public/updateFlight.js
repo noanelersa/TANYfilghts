@@ -166,6 +166,7 @@ $('#submitUpdate').click(function(e){
         success: function (){
             $('#allFlightUpdate').modal('hide');
             $('#UF').modal('hide');
+            updateGraphOne();
             updateAllFlight();
         },
         error: function (){alert("error")}

@@ -34,6 +34,7 @@ const sourceCreate = $('#sourceFlightCreate')[0];
 const destinationCreate = $('#destinationFlightCreate')[0];
 const priceCreate= $('#priceFlightCreate')[0];
 
+
 $('#submitCreate').click(function (e){
     e.preventDefault();
     if(!checkValidCreate()){return;}
@@ -46,10 +47,11 @@ $('#submitCreate').click(function (e){
             landTime: landTimeCreate.value,
             source: sourceCreate.value,
             destination: destinationCreate.value,
-            price:priceCreate.value
+            price:priceCreate.value,
         },
         success: function (){
             $('#CF').modal('hide');
+            updateGraphOne();
         },
         error: function (){alert("error")}
     });

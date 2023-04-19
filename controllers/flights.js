@@ -49,9 +49,13 @@ const searchSpesicFlight=async (req,res)=>{
     const source=req.query.source;
     const destination=req.query.destination;
     const price=req.query.price;
+    const value=await flightService.searchSpesicFlight(flightTime, landTime, source, destination,price);
+    res.json(value);
+}
 
-        const value=await flightService.searchSpesicFlight(flightTime, landTime, source, destination,price);
-        res.json(value);
+const getPopularDes = async (req,res) => {
+    const something = await flightService.getPopularDes();
+    res.json(something)
 }
 
 module.exports={
@@ -63,5 +67,6 @@ module.exports={
     getFlightById,
     getCreatePage,
     getDeletePage,
-    searchSpesicFlight
+    searchSpesicFlight,
+    getPopularDes
 };

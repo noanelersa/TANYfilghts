@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const flightController= require('../controllers/flights');
 
+router.route('/getBestDes').get(flightController.getPopularDes)
 router.route('/allFlights')
     .get(flightController.getFlights)
 

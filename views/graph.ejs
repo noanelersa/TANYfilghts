@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script>
+        function updateGraphOne(){
+            let dataG = [];
+            function getAllFlights() {
+                dataG = [];
+                $.ajax({
+                    type: 'GET',
+                    url: "/flight/allFlights",
+                }).done(function (data) {
+                    // Empty array to store flight airlines
+                    let flightAirlines = new Map();
+
+                    // Iterate through each flight object in the response data
+                    data.forEach((flight) => {
+                        // Access the flight airline property and add it to the flightAirlines array
+                        if(flightAirlines.has(flight.airlineName)){flightAirlines.set(flight.airlineName,flightAirlines.get(flight.airlineName) + 1);}
+                        else{flightAirlines.set(flight.airlineName,1)}
+                    });
+                    flightAirlines.forEach(setGraph);
+                    updateChart();
+                })
+
+                function setGraph(value, key, map){
+                    dataG.push({label: key,y: value})
+                }
+            }
+            getAllFlights()
+            let chart = new CanvasJS.Chart("chartContainer", {
+                title: {
+                    text: "Best Airlines Used"
+                },
+                axisX: {
+                    title: "Airlines",
+                    includeZero: true,
+                },
+                axisY: {
+                    title: "Amount",
+                    includeZero: true,
+                },
+                data: [{
+                    type: "column",
+                    yValueFormatString: "#,###",
+                    indexLabel: "{y}",
+                    dataPoints: dataG
+
+                }]
+            });
+
+            function updateChart() {
+                console.log(chart)
+                var dps = chart.options.data[0].dataPoints;
+                chart.options.data[0].dataPoints = dps;
+                chart.render();
+                document.getElementById("graphPosition").appendChild(document.getElementById('chartContainer'));
+            };
+
+            //setInterval(function() {updateChart()}, 1);
+
+        }
+        function updateGraphTwo(){
+            let dataG = [];
+            function getAllFlights1() {
+                dataG = [];
+                $.ajax({
+                    type: 'GET',
+                    url: "/flight/getBestDes",
+                }).done(function (data) {
+                    console.log(data)
+                    // Empty array to store flight airlines
+                    let flightAirlines = new Map();
+
+                    // Iterate through each flight object in the response data
+                    data.forEach((flight) => {
+                        // Access the flight airline property and add it to the flightAirlines array
+                        flightAirlines.set(flight._id.destination,flight.count);
+                    });
+                    flightAirlines.forEach(setGraph1);
+                    updateChart1();
+                })
+
+                function setGraph1(value, key, map){
+                    dataG.push({label: key,y: value})
+                }
+            }
+            getAllFlights1()
+            let chart1 = new CanvasJS.Chart("chartContainer1", {
+                title: {
+                    text: "Most Desired Destinations"
+                },
+                axisX: {
+                    title: "Destinations",
+                    includeZero: true,
+                },
+                axisY: {
+                    title: "Amount",
+                    includeZero: true,
+                },
+                data: [{
+                    type: "column",
+                    yValueFormatString: "#,###",
+                    indexLabel: "{y}",
+                    dataPoints: dataG
+
+                }]
+            });
+
+            function updateChart1() {
+                console.log(chart1)
+                var dps1 = chart1.options.data[0].dataPoints;
+                chart1.options.data[0].dataPoints = dps1;
+                chart1.render();
+                document.getElementById("graphPosition").appendChild(document.getElementById('chartContainer1'));
+            };
+
+
+            //setInterval(function() {updateChart1()}, 1);
+
+        }
+        window.onload = function () {updateGraphOne();updateGraphTwo();}
+    </script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px;"></div>
+<div id="chartContainer1" style="height: 300px;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

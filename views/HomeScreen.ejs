@@ -137,7 +137,7 @@
                         </div>
                         </div>
                     </div>
-                </div>np
+                </div>
             </div>
           </div>
           <div class="col">
@@ -171,6 +171,9 @@
         </div>
       </div>
   </div>
+    <div id="graphPosition">
+
+    </div>
     <footer class="footer">
         <div class="container text-center">
             <div class="row align-items-start">
@@ -439,6 +442,8 @@
     <%- include('login', {username:username}); %>
     <%- include('updateUser', {}); %>
     <%- include('results',{})%>
+    <%- include('graph',{})%>
+
     <script>
         $('#updateUserButton').click(function (){
             userUpdateMenu("<%=username%>");
@@ -450,6 +455,7 @@
             $('#allFlightResult').modal('show');
             allFlightResult();
         });
+
     </script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
