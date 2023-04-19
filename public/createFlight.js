@@ -51,6 +51,12 @@ $('#submitCreate').click(function (e){
         },
         success: function (){
             $('#CF').modal('hide');
+            airlineCreate.value="";
+            flightTimeCreate.value="";
+            landTimeCreate.value="";
+            sourceCreate.value="";
+            destinationCreate.value="";
+            priceCreate.value="";
             updateGraphOne();
         },
         error: function (){alert("error")}
