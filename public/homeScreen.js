@@ -12,3 +12,4 @@ $('#deleteFlightBtn').click(function (e){
     e.preventDefault();
     reloadAllFlightPageDelete();
 });
+

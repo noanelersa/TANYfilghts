@@ -28,7 +28,7 @@ function userUpdateMenu(username){
     })
 
 }
-function checkValidUpdate() {
+function checkValidUpdateUser() {
     function setError(element) {
         element.style.border = "solid 2px red";
     }
@@ -93,7 +93,7 @@ function checkValidUpdate() {
 
 $('#userUpdateSubmit').click(function(e){
     e.preventDefault();
-    if(!checkValidUpdate()){return;}
+    if(!checkValidUpdateUser()){return;}
     $.ajax({
         type: 'POST',
         url: "/user/update?id=" + idUser.className,

@@ -4,7 +4,9 @@ const flightTimeUpdate = $('#flightTimeUpdate')[0];
 const landTimeUpdate = $('#landTimeFlightUpdate')[0];
 const sourceUpdate = $('#sourceFlightUpdate')[0];
 const destinationUpdate = $('#destinationFlightUpdate')[0];
+const priceUpdate= $('#priceFlightUpdate')[0];
 const idFlight = $('#flightID')[0];
+
 
 function resetUpdatePage() {
     while(document.getElementById('modalBodyUpdate').hasChildNodes()){
@@ -28,7 +30,7 @@ function updateAllFlight(){
     })
 }
 
-function updateForm(id,airline,flightTime,land,source,des) {
+function updateForm(id,airline,flightTime,land,source,des,price) {
     $('#allFlightUpdate').modal('hide');
     let timeExit = String(flightTime).split(":");
     timeExit = timeExit[0] + ":" + timeExit[1];
@@ -39,6 +41,7 @@ function updateForm(id,airline,flightTime,land,source,des) {
     $('#landTimeFlightUpdate')[0].value = timeLand;
     $('#sourceFlightUpdate')[0].value = source;
     $('#destinationFlightUpdate')[0].value = des;
+    $('#priceFlightUpdate')[0].value=price;
     const flightId = $('#flightID')[0]
     flightId.hide = true;
     flightId.className = "" + id;
@@ -62,11 +65,11 @@ function addElementFlightUpdate(flight){
 
     let paragraphElement = document.createElement('p');
     paragraphElement.className = "card-text"
-    paragraphElement.innerHTML = "airline: " + flight.airlineName + "<br>" + "from: " + flight.source + "<br>" + "to: " + flight.destination + "<br>" + "date: " + finalDate;
+    paragraphElement.innerHTML = "airline: " + flight.airlineName + "<br>" + "from: " + flight.source + "<br>" + "to: " + flight.destination + "<br>" + "date: " + finalDate+"<br>"+"price: "+flight.price;
 
     let buttonElement = document.createElement('button');
     buttonElement.className = "btn btn-primary";
-    buttonElement.onclick = function () {updateForm(flight._id, flight.airlineName, flight.flightTime, flight.landTime,flight.source,flight.destination)}
+    buttonElement.onclick = function () {updateForm(flight._id, flight.airlineName, flight.flightTime, flight.landTime,flight.source,flight.destination,flight.price)}
     buttonElement.innerHTML = "update the flight"
 
 
@@ -129,6 +132,20 @@ function checkValidUpdate() {
     else{
         setOk(destinationUpdate);
     }
+    if(priceUpdate.value == null || priceUpdate.value === ""){
+        setError(priceUpdate);
+        return false;
+    }
+    else{
+        setOk(priceUpdate);
+    }
+    if(priceUpdate.value<=0){
+        setError(priceUpdate);
+        return false;
+    }
+    else{
+        setOk(priceUpdate);
+    }
     return true;
 }
 
@@ -143,7 +160,8 @@ $('#submitUpdate').click(function(e){
             flightTime: flightTimeUpdate.value,
             landTime: landTimeUpdate.value,
             source: sourceUpdate.value,
-            destination: destinationUpdate.value
+            destination: destinationUpdate.value,
+            price:priceUpdate.value
         },
         success: function (){
             $('#allFlightUpdate').modal('hide');
