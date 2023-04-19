@@ -1,17 +1,21 @@
 const Flight = require('../models/flights');
 const mongoose = require("mongoose");
 //create delete update getAll getSpecific
-const createFlight = async(airlineName,flightTime,landTime,source,destination)=>{
-    if(Flight.find({airlineName:airlineName, landTime: landTime, source:source ,flightTime:flightTime, destination: destination})._id){return null;}
+const createFlight = async(airlineName,flightTime,landTime,source,destination,price)=>{
+    if(Flight.find({airlineName:airlineName, landTime: landTime, source:source ,flightTime:flightTime, destination: destination,price:price})._id){return null;}
+    flightTime = flightTime + ":00.000Z";
+    landTime = landTime + ":00.00Z";
     const flight = new Flight({
         airlineName:airlineName,
         source:source,
         destination:destination,
         flightTime: flightTime,
-        landTime: landTime
+        landTime: landTime,
+        price:price,
     });
     return await flight.save();
 };
+
 
 const getFlightById = async(id)=>{
     if(mongoose.Types.ObjectId.isValid(id)){
@@ -34,21 +38,48 @@ const getFlights = async ()=>{
     return await Flight.find({});
 };
 
-const update = async(airlineName,flightTime,landTime,source,destination,id)=>{
+const update = async(airlineName,flightTime,landTime,source,destination,price,id)=>{
     const flight= await getFlightById(id);
     if(!flight){return null;}
+    flightTime = flightTime + ":00.000Z";
+    landTime = landTime + ":00.00Z";
     flight.airlineName=airlineName;
     flight.flightTime=flightTime;
     flight.landTime=landTime;
     flight.source=source;
     flight.destination=destination;
+    flight.price=price;
     return await flight.save();
 };
+
+const searchSpesicFlight = async(flightTime, landTime, source, destination,price)=>{
+    flightTime = flightTime + "T00:00:00.000Z";
+    landTime = landTime + "T00:00:00.000Z";
+    return await (Flight.find({
+        source: source,
+        destination: destination,
+        flightTime: {$gt: flightTime},
+        landTime: {$lt: landTime}
+    }));
+};
+
+const getPopularDes = async () =>{
+    return await Flight.aggregate( [
+        {
+            $group: {
+                _id: {destination: "$destination"},
+                count: { $count: { } }
+            }
+        }
+    ] )
+}
 
 module.exports={
     createFlight,
     getFlightById,
     deleteFlight,
     getFlights,
-    update
+    update,
+    searchSpesicFlight,
+    getPopularDes
 };

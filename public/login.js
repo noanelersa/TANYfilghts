@@ -90,7 +90,6 @@ $('#registerButton').click(function (e){
     else {
         if (!String(email).includes("@")) {
             $('#emailLabelRegister')[0].innerHTML = "Email Invalid";
-            console.log("hello")
             $('#emailLabelRegister').show();
             valid = false;
         } else {

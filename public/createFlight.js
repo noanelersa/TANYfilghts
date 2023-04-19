@@ -32,10 +32,12 @@ const flightTimeCreate = $('#flightTimeCreate')[0];
 const landTimeCreate = $('#landTimeFlightCreate')[0];
 const sourceCreate = $('#sourceFlightCreate')[0];
 const destinationCreate = $('#destinationFlightCreate')[0];
+const priceCreate= $('#priceFlightCreate')[0];
+
 
 $('#submitCreate').click(function (e){
     e.preventDefault();
-    if(!checkValidCreate()){console.log("yes its me mario");return;}
+    if(!checkValidCreate()){return;}
     $.ajax({
         type: 'POST',
         url: "/flight/create",
@@ -44,10 +46,18 @@ $('#submitCreate').click(function (e){
             flightTime: flightTimeCreate.value,
             landTime: landTimeCreate.value,
             source: sourceCreate.value,
-            destination: destinationCreate.value
+            destination: destinationCreate.value,
+            price:priceCreate.value,
         },
         success: function (){
             $('#CF').modal('hide');
+            airlineCreate.value="";
+            flightTimeCreate.value="";
+            landTimeCreate.value="";
+            sourceCreate.value="";
+            destinationCreate.value="";
+            priceCreate.value="";
+            updateGraphOne();
         },
         error: function (){alert("error")}
     });
@@ -56,7 +66,6 @@ $('#submitCreate').click(function (e){
 function checkValidCreate() {
     function setError(element) {
         element.style.border = "solid 2px red";
-        console.log(element)
     }
     function setOk(element){
         element.style.border = "solid 1px #dee2e6";
@@ -95,6 +104,20 @@ function checkValidCreate() {
     }
     else{
         setOk(destinationCreate);
+    }
+    if(priceCreate.value == null || priceCreate.value === ""){
+        setError(priceCreate);
+        return false;
+    }
+    else{
+        setOk(priceCreate);
+    }
+    if(priceCreate.value<=0){
+        setError(priceCreate);
+        return false;
+    }
+    else{
+        setOk(priceCreate);
     }
     return true;
 }
